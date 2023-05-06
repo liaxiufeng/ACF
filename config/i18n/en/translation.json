@@ -1,0 +1,1963 @@
+{
+    "mouseMove": {
+    "point":"Move to coordinates.",
+    "menuTitle":"Mouse movement",
+    "menuNote":"mouseMove.menuNote"
+    },
+    "iconRecognition": {
+    "file":"Range of icons or pictures to be identified (Base64 encoding)",
+    "select_image":"Capture the image to be identified",
+    "confidence":"Set the confidence level (the range is 1-10, the larger the number, the higher the confidence level. If the confidence level is greater than the confidence level, the confidence level will be set as reliable. If the confidence level is less than the confidence level, the result will not be found)",
+    "outParam":"Output variable naming",
+    "menuTitle":"Icon recognition",
+    "menuNote":"iconRecognition.menuNote"
+    },
+    "getPageCookies": {
+    "outParam":"Output parameter naming",
+    "menuTitle":"Get cookies of current page",
+    "menuNote":"getPageCookies.menuNote"
+    },
+    "verCodeJuHe": {
+    "file":"Select the captcha image to be recognized",
+    "select_image":"Select picture",
+    "outParam":"Output variable naming",
+    "menuTitle":"Captcha identification interface call",
+    "menuNote":"verCodeJuHe.menuNote"
+    },
+    "localDbCreate": {
+    "localFile":"Select the folder where the database is located.",
+    "selectFile":"Select Folder",
+    "fileName":"Database file name",
+    "tableName":"New table name",
+    "outParam":"Name the local database configuration created.",
+    "menuTitle":"Create local database (SQLite)",
+    "menuNote":"localDbCreate.menuNote"
+    },
+    "localDbOthers": {
+    "dbRename":"Please select local database configuration",
+    "dbSql":"Add, delete and modify statements",
+    "outParam":"Output variable (number of rows affected)",
+    "menuTitle":"Add, delete and modify local database (SQLite)",
+    "menuNote":"localDbOthers.menuNote"
+    },
+    "localDbSelect": {
+    "dbRename":"Please select local database configuration",
+    "dbSql":"Query statements",
+    "outParam":"Output variable naming",
+    "menuTitle":"Query local database (SQLite)",
+    "menuNote":"localDbSelect.menuNote"
+    },
+    "complexLogic": {
+    "html":"Complex logical expressions",
+    "outParam":"Expression result output",
+    "menuTitle":"Complex logic computing",
+    "menuNote":"complexLogic.menuNote"
+    },
+    "localDbConfig": {
+    "localFile":"Select local SQLite database file",
+    "selectFile":"Select file",
+    "outParam":"Configure naming for local database",
+    "menuTitle":"Configure local database (SQLite)",
+    "menuNote":"localDbConfig.menuNote"
+    },
+    "configSeleniumExplore": {
+    "type":"Select browser",
+    "IE":"IE",
+    "Firefox":"Firefox",
+    "Chrome":"Chrome",
+    "menuTitle":"Set up selenium controlled browsers",
+    "menuNote":"configSeleniumExplore.menuNote"
+    },
+    "paramsPaste": {
+    "isFormat":"Do you want to keep the original format",
+    "outParam":"Output variable naming",
+    "-":"Clipboard import variables",
+    "menuTitle":"Clipboard import variables",
+    "menuNote":"Output a new variable and name it"
+    },
+    "wordCopyInClip": {
+    "menuTitle":"Word document content import clipboard",
+    "file":"Select word file",
+    "menuNote":"Read a word document and copy its contents and styles to the clipboard"
+    },
+    "callFunction": {
+    "paramName":"Variable name",
+    "functionName":"Conversion function",
+    "outParam":"Output variable naming",
+    "-":"Common functions",
+    "menuTitle":"Common functions",
+    "menuNote":"Convert variables with functions, output a new variable and name it"
+    },
+    "conArrayRowCol": {
+    "outParam":"Output variable naming",
+    "paramValue":"The name of the converted 2D array variable.",
+    "-":"Two dimensional array row column swap",
+    "menuTitle":"Two dimensional array row column swap",
+    "menuNote":"Swap rows and columns of two-dimensional array, output a new array and name it"
+    },
+    "backGlobalParam": {
+    "outParam":"Output variable naming",
+    "paramValue":"Variable name",
+    "-":"Return global variables",
+    "menuTitle":"Return global variables",
+    "menuNote":"Return local variables to global variables"
+    },
+    "paramsCopy": {
+    "paramName":"Variable name",
+    "-":"Variable import clipboard",
+    "menuTitle":"Variable import clipboard",
+    "menuNote":"Copy variable contents to clipboard"
+    },
+    "simpleFormula": {
+    "outParam":"Result output variable naming",
+    "formula":"Simple formula input",
+    "menuTitle":"Simple formula operation",
+    "menuNote":"Calculate a value through a simple formula, output a new variable and name it (example?) "
+    },
+    "setColParam": {
+    "paramName":"Variable name",
+    "httpparameters":"Variables",
+    "menuTitle":"Set set collection variables",
+    "menuNote":"Generate / modify specified array / object"
+    },
+    "saveNewParam": {
+        "paramValue":"Variable values",
+        "outParam":"Output variable naming",
+        "menuTitle":"Set variables",
+        "menuNote":"Create a new variable, assign and name it"
+    },
+    "calculateParam": {
+    "outParam":"Output variable naming",
+    "param1":"Variable one",
+    "param2":"Variable two",
+    "operator":"Operators",
+    "mo":"Take the surplus",
+    "menuTitle":"Mathematical operations.",
+    "menuNote":"Do simple mathematical operation on two variables, output a new variable and name it"
+    },
+    "numTrans": {
+    "outParam":"Output variable naming",
+    "paramValue":"Variable values",
+    "type":"Select conversion mode",
+    "numTozh":"Arabic numerals to Chinese numerals",
+    "zhTonum":"Chinese numerals to Arabic numerals",
+    "menuTitle":"Conversion of Chinese numerals to Arabic numerals",
+    "menuNote":"Convert Chinese numerals / Arabic numerals in variables to each other, output a new variable and name it (change the variable value to the variable to be converted)"
+    },
+    "arrayConcat": {
+    "outParam":"Output parameter naming",
+    "des":"Array",
+    "value":"Array to be spliced",
+    "menuTitle":"Array splicing",
+    "menuNote":"Concatenate dry arrays of the same dimension into a new array and name it"
+    },
+    "extractParam": {
+    "outParam":"Output variable naming",
+    "regexValue":"Extracted values",
+    "key":"Key name",
+    "index":"Subscript value",
+    "quickKey":"Quick extraction ({key name} [subscript])",
+    "extractType":"Extraction method",
+    "paramName":"Variable name",
+    "menuTitle":"Extract variables.",
+    "menuNote":"Extract some variables through their subscript values or key names, output a new variable and name it"
+    },
+    "convertParam": {
+    "outParam":"Output variable naming",
+    "regexValue":"Regular expressions",
+    "paramName":"Variable name",
+    "menuTitle":"Grammatical transformation",
+    "menuNote":"Convert variables with regular expressions, output a new variable and name it"
+    },
+    "strSplit": {
+    "outParam":"Output array naming",
+    "separator":"Separator",
+    "strObject":"String to be split",
+    "menuTitle":"String segmentation.",
+    "menuNote":"Split a string into several strings with a separator, output a new array and name it"
+    },
+    "string_generacte": {
+    "outParam":"Output string naming",
+    "html":"String",
+    "menuTitle":"String concatenation",
+    "menuNote":"Concatenate several strings to output a new string and name it"
+    },
+    "excelToObject": {
+    "outParam":"Output file as variable",
+    "filePath":"Operating Excel files",
+    "menuTitle":"Operating Excel files",
+    "selectFile":"Select file",
+    "menuNote":"Select an excel file as the operation range to perform various reading and writing operations on the worksheet / cell of the excel file"
+    },
+    "readCsvFile": {
+    "outParam":"Output variable naming",
+    "filePath":"Read CSV file",
+    "menuTitle":"Read CSV file",
+    "selectFile":"Select file",
+    "menuNote":"Select a CSV file, read all the contents of the file, output a new variable and name it"
+    },
+    "excelReadCell": {
+    "outParam":"Output variable naming",
+    "object":"Cell object",
+    "text":"Text",
+    "resType":"Select output result type",
+    "rectangle":"Read position (row, column)",
+    "sheetName":"Sheet name",
+    "excelKey":"Select excel file object",
+    "menuTitle":"Read cells",
+    "menuNote":"Select a cell in the specified worksheet in an excel file, output a new variable from the cell and name it"
+    },
+    "excelReadSheet": {
+    "outParam":"Output variable naming",
+    "sheetName":"Select sheet",
+    "allSheet":"All worksheets",
+    "excelKey":"Select excel file object",
+    "menuTitle":"Read sheet contents",
+    "menuNote":"Select several / all worksheets of an excel file, get the contents of the worksheet, output a new variable and name it"
+    },
+    "excelReadRange": {
+    "outParam":"Output variable naming",
+    "rightDown":"Read the lower right point of the rectangle range.",
+    "leftUp":"Read the upper left point of the rectangle range",
+    "sheetName":"Sheet name",
+    "excelKey":"Select excel file object",
+    "menuTitle":"Read the specified range",
+    "menuNote":"Select a worksheet in an excel file, read the contents in the specified range, output the contents into a new variable and name it"
+    },
+    "excelCopyPart": {
+    "to_rectangle_right_up":"Start point of replication",
+    "to_sheet":"Target sheet name",
+    "excelKey2":"Select the excel file object to copy to",
+    "rectangle_right_down":"Rectangle range to be copied",
+    "from_sheet":"Source sheet name",
+    "excelKey":"Select the source excel file object",
+    "menuTitle":"Copy part to another file",
+    "menuNote":"Select two Excel files and their worksheets to copy the specified part of one excel file to the specified location of another excel file"
+    },
+    "excelChangeSheet": {
+    "newSheetName":"New sheet name",
+    "sheetName":"Sheet name",
+    "excelKey":"Select excel file object",
+    "menuTitle":"Change sheet name",
+    "menuNote":"Select a worksheet in an excel file and change its name"
+    },
+    "excelDeleRowCol": {
+    "rectangle":"Operation position (row or column)",
+    "rowCol":"Operation object",
+    "sheetName":"Sheet name",
+    "excelKey":"Select excel file object",
+    "col":"Column",
+    "row":"Xing",
+    "menuTitle":"Clear row and column data.",
+    "menuNote":"Select a worksheet in an excel file to clear the row / column data in the worksheet"
+    },
+    "writeCsvFile": {
+    "outParam":"The full path name of the output file is a parameter.",
+    "isSaveHistory":"Save to historical task",
+    "newFileName":"History file alias",
+    "targetPath":"Saved path",
+    "filename":"File name",
+    "valueParam":"Data name to be saved",
+    "a":"Add",
+    "w":"Overlay",
+    "writeType":"Write type",
+    "menuTitle":"Write to a CSV file",
+    "select_directory":"Choose a path.",
+    "menuNote":"Write variables to a CSV file and name the file, and output a new variable from the file path and name it"
+    },
+    "excelWriteCell": {
+    "rectangle":"Write position (row, column)",
+    "sheetName":"Sheet name",
+    "excelObject":"Select excel file object",
+    "valueParam":"Variables to write to",
+    "menuTitle":"Write to cell",
+    "menuNote":"Select a cell in the specified sheet in an excel file and write the variable to that cell"
+    },
+    "excelWriteSheet": {
+    "valueParam":"Variables to write to",
+    "add":"Add at the end",
+    "write":"Overlay",
+    "resType":"Write type",
+    "sheetName":"Sheet name",
+    "excelObject":"Select excel file object",
+    "menuTitle":"Write to worksheet",
+    "menuNote":"Select a worksheet in an excel file and write variables to the worksheet"
+    },
+    "excelWriteRowCol": {
+    "rectangle":"Write position (row or column)",
+    "col":"Column",
+    "row":"Xing",
+    "rowCol":"Write type",
+    "sheetName":"Sheet name",
+    "excelObject":"Select excel file object",
+    "valueParam":"Variables to write to",
+    "menuTitle":"Write row and column data.",
+    "menuNote":"Select a worksheet in an excel file and write variables (one-dimensional array) into the table rows and columns"
+    },
+    "excelwriteRange": {
+    "leftUp":"Write start point",
+    "valueParam":"Variables to write to",
+    "sheetName":"Sheet name",
+    "excelObject":"Select excel file object",
+    "menuTitle":"Write to specified range",
+    "menuNote":"Select a worksheet in an excel file to write the variable to the specified starting point range"
+    },
+    "excelCreateSheet": {
+    "sheetName":"New sheet name",
+    "excelObject":"Select excel file object",
+    "menuTitle":"New sheet",
+    "menuNote":"Select an excel file, create a new sheet and name it"
+    },
+    "copyOrpasteDo": {
+    "ctrlCOrV":"Select copy paste operation",
+    "ctrlC":"Copy operations",
+    "ctrlV":"Paste operation",
+    "menuTitle":"Copy and paste",
+    "menuNote":"Copy / paste"
+    },
+    "shortCut": {
+    "hotKey":"Keyboard hotkeys",
+    "count":"Number of times of execution.",
+    "menuTitle":"Keyboard operations",
+    "menuNote":"Set the specific hotkey and execution times executed by the keyboard to trigger the hotkey and execution times at runtime"
+    },
+    "mouseClick": {
+    "mouseClickType":"Click type",
+    "leftClick":"Left click",
+    "midClick":"Middle click",
+    "rightClick":"Right click",
+    "leftDbclick":"Left double click",
+    "menuTitle":"Mouse click",
+    "menuNote":"Click on mouse"
+    },
+    "mouseRoll": {
+    "mouseRollLeftOrRight":"Left and right scrolling (positive to the right, negative to the left, the number of times the scroll key scrolls)",
+    "mouseRollUpOrDown":"Scroll up and down (down is positive, up is negative, the number of times the wheel key scrolls)",
+    "rectangle":"Element coordinates (x, y)",
+    "path":"Element subscript",
+    "winTitle":"Element form name",
+    "processName":"Element process name",
+    "CScapture":"Capture desktop elements",
+    "CScapturePos":"Capture desktop elements",
+    "menuTitle":"Mouse scrolling",
+    "menuNote":"Mouse scrolls within the specified element"
+    },
+    "draftingMouse": {
+    "rectangle_end":"Mouse drag end position",
+    "rectangle_start":"Mouse drag start position",
+    "menuTitle":"Mouse drag.",
+    "menuNote":"Enter the start and end coordinates of the mouse's active range to drag the mouse at runtime"
+    },
+    "pasteDo": {
+    "text-box":"Paste operation"
+    },
+    "CSmove_position": {
+    "mouseClick":"Left click",
+    "mouseMove":"Mouse movement",
+    "rectangle":"Element coordinates (x, y)",
+    "CScapturePos":"Capture desktop element (position)",
+    "menuTitle":"Coordinate positioning",
+    "menuNote":"Coordinate positioning"
+    },
+    "docReadTxt": {
+    "outParam":"Output variable naming",
+    "usinessDescription":"Business description",
+    "filePath":"Read TXT file",
+    "menuTitle":"Read TXT file",
+    "selectFile":"Select file",
+    "menuNote":"Select a TXT file, get all the contents of the file, output a new variable and name it (when the business description is a central control publishing task, select the remarks in front of the file)"
+    },
+    "docReadWord": {
+    "outParam":"Output variable naming",
+    "businessDescription":"Business description",
+    "filePath":"Read word file",
+    "menuTitle":"Read word file",
+    "selectFile":"Select file",
+    "menuNote":"Select a word file, get all the contents of the file, output a new variable and name it"
+    },
+    "docWriteTxt": {
+    "newFileName":"History file alias",
+    "isSaveHistory":"Save to historical task",
+    "outParam":"The full path name of the output file is a variable.",
+    "targetPath":"Saved path",
+    "filename":"File name",
+    "a":"Add",
+    "w":"Overlay",
+    "writeType":"Write type",
+    "valueParam":"Variables to save",
+    "menuTitle":"Write to TXT file",
+    "select_directory":"Choose a path.",
+    "menuNote":"Write variables to a TXT file and name the file, and output a new variable from the full path of the file and name it"
+    },
+    "docWriteWord": {
+    "outParam":"The full path name of the output file is a variable.",
+    "isSaveHistory":"Save to historical task",
+    "newFileName":"History file alias",
+    "targetPath":"Saved path",
+    "filename":"File name",
+    "valueParam":"Variables to save",
+    "menuTitle":"Write to word file",
+    "select_directory":"Choose a path.",
+    "menuNote":"Write variables to a word file and name the file, and output a new variable from the full path of the file and name it"
+    },
+    "closeExecuteWindow": {
+    "text-box":"Hide the execution interface",
+    "menuTitle":"Hide the execution interface",
+    "menuNote":"Hide debugger interface"
+    },
+    "CMDcommand": {
+    "outParam":"Set CMD output as variable",
+    "command":"CMD input command",
+    "menuTitle":"CMD command line",
+    "menuNote":"Fill in the command line into the CMD, output a new variable and name it"
+    },
+    "openApplication": {
+    "openPath":"Select app",
+    "menuTitle":"Open app",
+    "selectFile":"Select app",
+    "menuNote":"Open the specified app"
+    },
+    "waitTime": {
+    "sleep":"Please enter the waiting time (MS)",
+    "menuTitle":"Waiting time",
+    "menuNote":"Set the wait between the previous node and the next node run"
+    },
+    "confirmSend": {
+    "isTxt":"Plain text",
+    "content":"Message content",
+    "openPath":"Select attachment",
+    "subject":"Subject",
+    "receive_c":"CC",
+    "receive":"To",
+    "port":"Port",
+    "server":"SMTP server",
+    "pwd":"Password / authorization code",
+    "account":"Log in to your account.",
+    "menuTitle":"Send mail.",
+    "selectFile":"Select file",
+    "menuNote":"Input the account name / password and other information to log in to the email address, and send / CC the designated email to the designated recipient according to the content filled in"
+    },
+    "closeApplication": {
+    "closePath":"Select app",
+    "menuTitle":"Close app",
+    "menuNote":"Close the specified app"
+    },
+    "getIp": {
+    "outParam":"Output native IP as variable",
+    "menuTitle":"Get local IP",
+    "menuNote":"Output a new variable for native IP and name it"
+    },
+    "getScriptInfo": {
+    "outParam":"Output variable naming",
+    "menuTitle":"Get script information",
+    "menuNote":"Get script information"
+    },
+    "getSystemParameter": {
+    "outParam":"Output variable naming",
+    "setParam":"Pass in variable (current time 'yyyy-mm-dd HH",
+    "getScreenSize":"Current resolution",
+    "getCurrentPath":"Application address",
+    "getCurrentLocale":"Current application language",
+    "getSysTime":"Current time",
+    "getClipboard":"Clipboard content.",
+    "getOSVersion":"Operating system version",
+    "getOSArchitecture":"System architecture",
+    "getRobotVersion":"Application version number",
+    "systemType":"Select system variables",
+    "menuTitle":"Get system variables",
+    "menuNote":"Get information about the system, output a new variable and name it (pass in variable?) "
+    },
+    "confirmReceive": {
+    "outParam":"New mailing list output variable naming",
+    "port":"Port",
+    "host":"IMAP server",
+    "password":"Password / authorization code",
+    "account":"Log in to your account.",
+    "menuTitle":"Receive new mail",
+    "menuNote":"Input the account name / password and other information to log in to the mailbox, and output a new variable for the new mailing list in the mailbox and name it"
+    },
+    "openExecuteWindow": {
+    "text-box":"Display execution interface",
+    "menuTitle":"Display execution interface",
+    "menuNote":"Show hidden debugger interface"
+    },
+    "capScreenPart": {
+    "outParam":"The full path name of the output file is a variable.",
+    "isSaveHistory":"Save to historical task",
+    "save-history":"History file alias",
+    "fileName":"Screen capture file name",
+    "rectangle_end":"Screen capture range, bottom right",
+    "rectangle_start":"Screen capture range, top left",
+    "menuTitle":"Screen capture of specified range",
+    "menuNote":"Enter the starting and ending coordinates to determine the screen capture range, name the screen capture file and output a new variable for the file path and name it"
+    },
+    "triggerBatVbs": {
+    "button":"Select app",
+    "openfilePath":"Select app",
+    "menuTitle":"Execute bat / VBS. ",
+    "menuNote":"Execute bat / VBS"
+    },
+    "triggerJava": {
+    "file":"Select app",
+    "button":"triggerJava.button",
+    "menuTitle":"Executing Java",
+    "selectFile":"Select file",
+    "menuNote":"Execute target java file"
+    },
+    "ocr_TencentCloud_getString": {
+    "outParam":"Output variable naming",
+    "file":"Select the image you want to identify.",
+    "menuTitle":"Tencent cloud character recognition",
+    "select_image":"Select picture",
+    "menuNote":"Use Tencent cloud API to identify the text in the target image"
+    },
+    "ocr_TencentCloud_getPosition": {
+    "outParam":"Output variable naming",
+    "matchString":"Text to match",
+    "file":"Select the image you want to identify.",
+    "menuTitle":"Tencent cloud text location recognition",
+    "select_image":"Select picture",
+    "menuNote":"Use Tencent cloud API to identify the position of target text in the image"
+    },
+    "dbSelect": {
+    "outParam":"Output variable naming",
+    "dbSql":"Query statements",
+    "dbRename":"Please select database configuration",
+    "menuTitle":"Query database",
+    "menuNote":"Select the configuration information to connect to the target database, enter the query statement to query the database, output a new variable and name it"
+    },
+    "dbConfig": {
+    "outParam":"Name the database configuration.",
+    "test_db_config":"Test links",
+    "schema":"Default database name / Oracle service name",
+    "password":"Password",
+    "username":"User name",
+    "port":"Port (default port",
+    "hostname":"Hostname (host IP)",
+    "oracle":"oracle",
+    "mssql":"mssql",
+    "mysql":"mysql",
+    "dbType":"Select database type",
+    "menuTitle":"Configuration database",
+    "menuNote":"Input the configuration information of a database and output the information as a variable to name it. Call the variable later to connect to the database"
+    },
+    "dbInsert": {
+    "outParam":"Output parameter (number of rows affected)",
+    "dbSql":"Pseudo insert statement (number is the position of data in a single data group)",
+    "dbData":"Please select the data source to insert.",
+    "dbRename":"Please select database configuration",
+    "menuTitle":"Batch insert database",
+    "menuNote":"Select configuration information to connect to the target database, insert data sources into the database in batches, and output a new variable for the number of rows affected and name it"
+    },
+    "dbOthers": {
+    "outParam":"Output variable (number of rows affected)",
+    "dbSql":"Add, delete and modify statements",
+    "dbRename":"Please select database configuration",
+    "menuTitle":"Adding, deleting, and modifying databases.",
+    "menuNote":"Select configuration information to connect to the target database, enter add / delete / modify statements to change the database, output a new variable for the number of rows affected and name it"
+    },
+    "fs_rename": {
+    "name":"New file name (including file format)",
+    "file":"Select the file you want to rename.",
+    "menuTitle":"Rename a file",
+    "selectFile":"Select file",
+    "menuNote":"Rename the specified file"
+    },
+    "fs_cre_directory": {
+    "name":"Directory name",
+    "directory":"Select the location to create the directory.",
+    "menuTitle":"Create directory",
+    "select_directory":"Select directory",
+    "menuNote":"Create a new folder in the specified location and name it"
+    },
+    "fs_cre_file": {
+    "name":"File name",
+    "directory":"Select the location to create the file.",
+    "menuTitle":"Create file",
+    "select_directory":"Select directory",
+    "menuNote":"Create a new file in the specified location and name it"
+    },
+    "fs_copy": {
+    "directory":"Select the directory to copy to",
+    "file":"Select files to copy",
+    "menuTitle":"Copy file",
+    "selectFile":"Select file",
+    "select_directory":"Select directory",
+    "menuNote":"Copy the specified file to the specified folder"
+    },
+    "fs_get_all_file": {
+    "outParam":"Name the output variable",
+    "filetype":"Target file type (default to select all)",
+    "directory":"Select the location of the directory.",
+    "menuTitle":"Get all file names in the directory.",
+    "select_directory":"Select directory",
+    "menuNote":"Get the path of all files in the specified folder, output a new variable and name it"
+    },
+    "unarchiverFile": {
+    "directoryRes":"Select the folder to save.",
+    "directory":"Select the file to decompress.",
+    "menuTitle":"Unzip file",
+    "selectFile":"Select file",
+    "select_directory":"Select directory",
+    "menuNote":"Select the specified file to decompress and save in the specified folder"
+    },
+    "fs_exists": {
+    "outParam":"Name the result variable",
+    "path":"Select the path to judge.",
+    "menuTitle":"Judging the existence of the path",
+    "select_directory":"Choose a path.",
+    "menuNote":"The input file path is used to determine whether the specified path exists at runtime, and output a new variable and name it"
+    },
+    "fs_delete": {
+    "file":"Select files to delete",
+    "menuTitle":"Delete file",
+    "selectFile":"Select file",
+    "menuNote":"Delete specified file"
+    },
+    "archiverFile": {
+    "outParam":"Output compressed file full path name as parameter",
+    "directoryRes":"Select the folder to save.",
+    "name":"Compressed file name",
+    "directory":"Select files / folders to compress",
+    "menuTitle":"Compressed files",
+    "select_directory":"Select Folder",
+    "selectFile":"Select file",
+    "save_directory":"Select Folder",
+    "menuNote":"Select the specified file to compress and save in the specified folder, rename the file, and output a new variable from the path and name it"
+    },
+    "fs_move": {
+    "directory":"Select directory to move to",
+    "file":"Select files to move",
+    "menuTitle":"Moving files",
+    "selectFile":"Select file",
+    "select_directory":"Select directory",
+    "menuNote":"Move the specified file to the specified folder"
+    },
+    "triggerScript": {
+    "scriptId":"Select parameters (only valid for actuators)",
+    "menuTitle":"Trigger script",
+    "menuNote":"Trigger script"
+    },
+    "openMstscReport": {
+    "text-box":"The process report will open.",
+    "menuTitle":"Open process report",
+    "menuNote":"Open process report"
+    },
+    "returnParameterToCenter": {
+    "parameter":"Select parameters (only valid for actuators)",
+    "menuTitle":"Return parameters to central control",
+    "menuNote":"Return specified parameters to central control system"
+    },
+    "openTips": {
+    "parameter":"Information to display",
+    "menuTitle":"Pop up prompt box",
+    "menuNote":"Pop up the prompt box of the specified content"
+    },
+    "getCSElement": {
+    "outParam":"Output as variable",
+    "height":"Height",
+    "width":"Element width",
+    "offRightDownPos":"Element relative lower right coordinate (x, y)",
+    "offRightTopPos":"Element relative upper right coordinate (x, y)",
+    "offLeftDownPos":"Element relative lower left coordinate (x, y)",
+    "offLeftTopPos":"Element relative upper left coordinates (x, y)",
+    "offCenterPos":"Relative center coordinates of elements (x, y)",
+    "pos":"Element coordinates (x, y)",
+    "elType":"Element type",
+    "elValue":"Element values",
+    "elName":"Element name",
+    "csPath":"Element subscript",
+    "winTitle":"Element form name",
+    "processName":"Element process name",
+    "CScaptureNew": {
+    "name":"Capture desktop elements",
+    "note":"Capture desktop elements and generate a CS class for use in Microsoft applications"
+    },
+    "menuTitle":"Capture desktop elements",
+    "menuNote":"Capture all kinds of information about the target desktop elements and save them as variables"
+    },
+    "similarSelector": {
+    "outParam":"Output results",
+    "selectors":"Drop down options text list",
+    "target":"Target text",
+    "menuTitle":"Returns the most similar drop-down item.",
+    "menuNote":"Put back the most similar value and save it as a variable by entering the drop-down list data and corresponding content to be selected"
+    },
+    "getCSParentElementByName": {
+    "outParam":"Output variable naming",
+    "elName": {
+    "name":"Element name",
+    "note":"Name you need to retrieve"
+    },
+    "eventType": {
+    "name":"Search type",
+    "note":"Search type"
+    },
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get parent element by element name",
+    "menuNote":"Enter the desktop element path to get the parent element of an element by element name or value at runtime and save it as a variable"
+    },
+    "getCSBrotherElementByName": {
+    "outParam":"Output variable naming",
+    "elName": {
+    "name":"Element name",
+    "note":"Name you need to retrieve"
+    },
+    "index": {
+    "name":"index",
+    "note":"It is an array when it is retrieved. Select the first one here, but it is usually not necessary to write"
+    },
+    "isSameType":"Is it the same type",
+    "eventType": {
+    "name":"Search type",
+    "note":"Search type"
+    },
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get sibling elements according to element name",
+    "menuNote":"Enter the desktop element path to get the sibling elements of an element by element name or value at runtime and save as a variable"
+    },
+    "getCSChildrenElementByName": {
+    "outParam":"Output variable naming",
+    "eventType": {
+    "name":"Search type",
+    "note":"Search type"
+    },
+    "index": {
+    "name":"index",
+    "note":"It is an array when it is retrieved. Select the first one here, but it is usually not necessary to write"
+    },
+    "elName": {
+    "name":"Element name",
+    "note":"Name you need to retrieve"
+    },
+    "Element":"Element object (cspath)",
+    "isSameType":"Is it the same type",
+    "menuTitle":"Get child elements by element name",
+    "menuNote":"Enter the desktop element path to get the child elements of an element by element name or value at runtime and save as a variable"
+    },
+    "getCSParentElement": {
+    "outParam":"Output variable naming",
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get parent element",
+    "menuNote":"Enter the desktop element path to get the parent element of the element by selecting a type and save it as a variable"
+    },
+    "getCSBrotherElement": {
+    "outParam":"Output variable naming",
+    "last":"last",
+    "next":"next",
+    "prev":"prev",
+    "first":"first",
+    "eventType": {
+    "name":"Select type",
+    "note":"The selection type in the array after getting the same level element through CS class"
+    },
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get sibling elements",
+    "menuNote":"Enter the desktop element path to get the sibling elements of the element at runtime and save it as a variable"
+    },
+    "getElementItems": {
+    "outParam":"Output variable naming",
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get dropdown list data",
+    "menuNote":"Input the path of the drop-down box object to get the contents of the drop-down box at runtime and save it as a variable"
+    },
+    "getCSChildrenElement": {
+    "outParam":"Output variable naming",
+    "eventType": {
+    "name":"Select type",
+    "note":"The selection type in the array after getting the same level element through CS class"
+    },
+    "Element":"Element object (cspath)",
+    "menuTitle":"Get child elements",
+    "menuNote":"Enter the desktop element path to get the child elements of the element by selecting the type and save them as variables"
+    },
+    "CSElemetClick": {
+    "mouseClickType": {
+    "name":"Select type",
+    "note":"Mouse action options that can be repositioned to an element via the CS class"
+    },
+    "noClick":"No click",
+    "leftDbclick":"Left double click",
+    "rightClick":"Right click",
+    "midClick":"Middle click",
+    "leftClick":"Left click",
+    "Element":"Element object (cspath)",
+    "menuTitle":"Desktop element click",
+    "menuNote":"Enter the path of the desktop element to use to click the desktop element at runtime"
+    },
+    "CSElemetInput": {
+    "input":"Direct input",
+    "inputText": {
+    "name":"Fill in the content (what needs to be filled in)",
+    "note":"Content to be entered into CS element"
+    },
+    "ctrlC":"Copy and paste",
+    "keybord":"Keyboard input",
+    "inputType": {
+    "name":"Input type",
+    "note":"You can reposition the option of element input operation through CS class, where keyboard input needs to be equal to Keydown and Keyup, and copy operation needs to focus"
+    },
+    "Element":"Element object (cspath)",
+    "inputParam":"Fill in the content (what needs to be filled in)",
+    "menuTitle":"Desktop element input",
+    "menuNote":"Enter the desktop element path to fill in the element at runtime"
+    },
+    "ftpDownLoad": {
+    "localPath":"Download path",
+    "fileNmae":"File name to download",
+    "remotePath":"Remote path",
+    "pass":"pass",
+    "user":"user",
+    "port":"Port",
+    "host":"Host",
+    "select_directory":"Select directory",
+    "menuTitle":"FTP download",
+    "menuNote":"Download a file from the remote host to your own computer through the specified FTP"
+    },
+    "httpApi": {
+    "outParam":"Output variable naming",
+    "text":"text",
+    "json":"json",
+    "paramType":"Select the type to get the variable.",
+    "httpparameters":"Variables",
+    "ContentType":"Select request header type",
+    "post":"post",
+    "get":"get",
+    "httpType":"Request type",
+    "menuTitle":"HTTP interface",
+    "menuNote":"Get data from the specified HTTP interface, output a new variable and name it"
+    },
+    "http_downloadfile": {
+    "outParam":"Output absolute path as variable",
+    "url_download":"Download address",
+    "button":"Select directory",
+    "directory":"Select the directory to save the file in.",
+    "menuTitle":"HTTP download file interface",
+    "menuNote":"Download files through HTTP interface"
+    },
+    "http_uploadfile": {
+    "url_upload":"Upload address",
+    "file":"Select the file to upload",
+    "menuTitle":"HTTP upload file interface",
+    "select_directory":"Select directory",
+    "menuNote":"Upload file to specified HTTP interface"
+    },
+    "socketApi": {
+    "outParam":"Output variable naming",
+    "text":"text",
+    "json":"json",
+    "data_type":"Select the type to get the variable.",
+    "signal":"Start signal",
+    "port":"Port",
+    "host":"Host",
+    "menuTitle":"Socket interface",
+    "menuNote":"Get data from the specified socket interface, output a new variable and name it"
+    },
+    "websocketApi": {
+    "outParam":"Output variable naming",
+    "text":"text",
+    "json":"json",
+    "data_type":"Select the type to get the variable.",
+    "signal":"Receive event signals.",
+    "port":"Port",
+    "host":"Host",
+    "menuTitle":"Websocket interface",
+    "menuNote":"Get data from the specified websocket interface, output a new variable and name it"
+    },
+    "newHttpApi": {
+    "outParam":"Output variable naming",
+    "resHeaders":"Response Headers",
+    "response":"Response",
+    "returnType":"Return result type",
+    "paramsKey1":"Request Parameters",
+    "headerKey1":"Headers",
+    "path":"Path",
+    "port":"Port",
+    "host":"Host",
+    "post":"POST",
+    "get":"GET",
+    "method":"HTTP method",
+    "menuTitle":"HTTP interface (New)",
+    "menuNote":"New interface"
+    },
+    "ftpUpload": {
+    "localPath":"Upload path",
+    "fileNmae":"Remote file name",
+    "remotePath":"Remote path",
+    "pass":"pass",
+    "user":"user",
+    "port":"Port",
+    "host":"Host",
+    "menuTitle":"FTP upload",
+    "select_directory":"Choose a path.",
+    "menuNote":"Upload a file on your computer to the remote host through the specified FTP"
+    },
+    "telnetClose": {
+    "telnetClient":"Close telnet client",
+    "menuTitle":"Telnet off",
+    "menuNote":"Select a telnet connection information to close the connection"
+    },
+    "telnetWrite": {
+    "outParam":"Output variable naming",
+    "cmdStr":"Telnet command",
+    "telnetClient":"Select telnet client",
+    "menuTitle":"Telnet command",
+    "menuNote":"Select a telnet connection information to connect to a server, enter the lelnet command into the server, and output a new variable with the obtained information and name it"
+    },
+    "telnetConnect": {
+    "outParam":"Output variable naming",
+    "password":"password",
+    "username":"username",
+    "port":"Port",
+    "host":"Host",
+    "menuTitle":"Telnet connection",
+    "menuNote":"Input the telnet connection information, output the information as a variable, name it, and then call the variable to connect to the server"
+    },
+    "continue": {
+    "continueCondition":"Parameter 2",
+    "gt":"Greater than",
+    "egt":"Greater than or equal to",
+    "eq":"Equal to",
+    "neq":"Not equal to",
+    "lt":"Less than",
+    "elt":"Less than or equal to",
+    "op":"Conditions.",
+    "include":"Contains",
+    "notInclude":"Does not contain",
+    "isNull":"Is it empty",
+    "continueValue":"Parameter 1",
+    "menuTitle":"Continue the cycle.",
+    "menuNote":"Judge by condition, continue current loop when condition is satisfied"
+    },
+    "foreach": {
+        "rename_i":"Naming of unit element subscripts",
+        "rename":"Naming of unit elements",
+        "objectList":"Please select iteration element",
+        "menuTitle":"List loop",
+        "menuNote":"Loop several times by the number of elements"
+        },
+    "concurrence":{
+        "menuTitle": "Concurrent processing"
+    },
+    "for": {
+    "rename_i":"Naming of unit element subscripts",
+    "rename":"Naming of unit elements",
+    "objectList":"Please select iteration element",
+    "menuTitle":"Iteration loop.",
+    "menuNote":"Loop several times by the number of elements"
+    },
+    "hashfor": {
+    "outParam":"Naming of unit elements",
+    "circulateCount":"Number of cycles.",
+    "menuTitle":"List traversal",
+    "menuNote":"Loop several times as many times as you specify"
+    },
+    "if": {
+    "rid":"Parameter 2",
+    "op":"Conditions.",
+    "gt":"Greater than",
+    "egt":"Greater than or equal to",
+    "eq":"Equal to",
+    "neq":"Not equal to",
+    "lt":"Less than",
+    "elt":"Less than or equal to",
+    "include":"Contains",
+    "notInclude":"Does not contain",
+    "isNull":"Is it empty",
+    "lid":"Parameter 1",
+    "menuTitle":"Conditional judgment",
+    "menuNote":"Judging according to the conditions, one process will be executed when the conditions are satisfied, and another process will be executed if the conditions are not satisfied"
+    },
+    "break": {
+    "breakCondition":"Parameter 2",
+    "op":"Conditions.",
+    "gt":"Greater than",
+    "egt":"Greater than or equal to",
+    "eq":"Equal to",
+    "neq":"Not equal to",
+    "lt":"Less than",
+    "elt":"Less than or equal to",
+    "include":"Contains",
+    "notInclude":"Does not contain",
+    "isNull":"Is it empty",
+    "breakValue":"Parameter 1",
+    "menuTitle":"Out of loop.",
+    "menuNote":"According to the conditions, exit the current single cycle and start the next cycle when the conditions are met"
+    },
+    "goto": {
+    "rid":"Parameter 2",
+    "op":"Conditions.",
+    "gt":"Greater than",
+    "egt":"Greater than or equal to",
+    "eq":"Equal to",
+    "neq":"Not equal to",
+    "lt":"Less than",
+    "elt":"Less than or equal to",
+    "include":"Contains",
+    "notInclude":"Does not contain",
+    "isNull":"Is it empty",
+    "lid":"Parameter 1",
+    "gotoFlow":"Directed process"
+    },
+    "shangdongMenu": {
+    "outParam":"Output variable naming",
+    "elName":"Element name",
+    "eventType":"Search type",
+    "name":"name",
+    "value":"value",
+    "Element":"Element object > (cspath)",
+    "menuTitle":"Menu tree search (Microsoft functions - unified business system)",
+    "menuNote":"Menu tree search (Microsoft functions - unified business system)"
+    },
+    "dateFormatSpe": {
+    "outParam":"Output variable naming",
+    "paramValue":"Variables to be processed",
+    "menuTitle":"Date data format",
+    "menuNote":"Process the specified variable into date format"
+    },
+    "slidingVerificationCode": {
+    "outParam":"Result output variable naming",
+    "file":"Select the image file to process.",
+    "menuTitle":"Return to the center of the image gap of the sliding captcha",
+    "select_image":"Select picture",
+    "menuNote":"Save the notch image and output a new variable for the notch location coordinates and name it"
+    },
+    "getVCode": {
+    "outParam":"Output variable naming",
+    "capture":"Grab.",
+    "xpath":"Element path (XPath)",
+    "menuTitle":"Get captcha",
+    "menuNote":"Enter the captcha path to get the contents of the captcha at run time, output a new variable and name it"
+    },
+    "ie8_getVCode": {
+        "outParam":"Output variable naming",
+        "capture":"Grab.",
+        "xpath":"Element path (XPath)",
+        "menuTitle":"Get captcha(IE)",
+        "menuNote":"Enter the captcha path to get the contents of the captcha at run time, output a new variable and name it"
+        },
+    "assert_type": {
+    "typeName":"Variable type",
+    "paramName":"Variable name",
+    "menuTitle":"Type assertion",
+    "menuNote":"(empty)"
+    },
+    "assert_value": {
+    "elt":"Less than or equal to",
+    "lt":"Less than",
+    "eq":"Equal to",
+    "egt":"Greater than or equal to",
+    "gt":"Greater than",
+    "paramName":"Meet conditions",
+    "menuTitle":"Variable value assertion",
+    "menuNote":"(empty)"
+    },
+    "getPixelColor": {
+    "outParam":"Result output as variable (true / false)",
+    "rgb":"Pixel at coordinates",
+    "position":"Element coordinates",
+    "mouse_now":"Current mouse position (during process running)",
+    "mouse_input":"Capture mouse position",
+    "mouse_type":"Select mouse position type",
+    "CScapturePos":"Capture desktop element (position)",
+    "menuTitle":"Screen pixel recognition",
+    "menuNote":"Determine whether there are pixels of this color on the desktop by selecting the RGB of the element"
+    },
+    "try_catch": {
+    "from_to":"Specify meta process",
+    "cmd":"break",
+    "cmd2":"continue",
+    "cmd3":"again",
+    "forActive":"Execute command",
+    "point_to":"Select node",
+    "list":"Re execution of current meta process node",
+    "list2":"The next node execution of the current meta process node",
+    "list3":"Jump out of specified loop",
+    "list4":"Process termination",
+    "list5":"Point to the start of the first node of the meta process",
+    "list6":"Return to the specified main process node",
+    "handle_type":"Solutions.",
+    "singleNodeId":"Single node ID",
+    "UndefinedException":"Undefined exception - undefined exception",
+    "WEBException":"Webexception - network access exception",
+    "SQLException":"Sqlexception - operation database exception",
+    "IllegalAccessException":"Illegalaccessexception - insufficient privilege exception",
+    "NoSuchFieldException":"Nosuchfieldexception - there is no exception for the property",
+    "ArrayIndexOutOfBoundsException":"ArrayIndexOutOfBoundsException array subscript out of bounds exception",
+    "ClassCastException":"ClassCastException - type cast exception",
+    "FileNotCreateException":"Filenotcreateexception - create file exception",
+    "FileTypeException":"Filetypeexception - file type exception",
+    "FileNotFoundException":"FileNotFoundException - file not found exception",
+    "SystemException":"SystemException - system exception",
+    "SeleniumException":"Selenium exception IE browser module exception",
+    "ElementNotFoundException":"Elementnotfoundexception - element not found exception",
+    "value1":"Capture type",
+    "url":"Name",
+    "menuTitle":"Exception capture",
+    "menuNote":"Set the type of exception that may occur and choose a resolution"
+    },
+    "catch_result": {
+    "from_to":"Specify meta process",
+    "cmd":"break",
+    "cmd2":"continue",
+    "cmd3":"again",
+    "forActive":"Execute command",
+    "point_to":"Select node",
+    "list":"Re execution of current meta process node",
+    "list2":"The next node execution of the current meta process node",
+    "list3":"Jump out of specified loop",
+    "list4":"Process termination",
+    "list5":"Point to the start of the first node of the meta process",
+    "list6":"Return to the specified main process node",
+    "handle_type":"Solutions.",
+    "singleNodeId":"Single node ID",
+    "UndefinedException":"Undefined exception - undefined exception",
+    "WEBException":"Webexception - network access exception",
+    "SQLException":"Sqlexception - operation database exception",
+    "IllegalAccessException":"Illegalaccessexception - insufficient privilege exception",
+    "NoSuchFieldException":"Nosuchfieldexception - there is no exception for the property",
+    "ArrayIndexOutOfBoundsException":"ArrayIndexOutOfBoundsException array subscript out of bounds exception",
+    "ClassCastException":"ClassCastException - type cast exception",
+    "FileNotCreateException":"Filenotcreateexception - create file exception",
+    "FileTypeException":"Filetypeexception - file type exception",
+    "FileNotFoundException":"FileNotFoundException - file not found exception",
+    "SystemException":"SystemException - system exception",
+    "ElementNotFoundException":"Elementnotfoundexception - element not found exception",
+    "value1":"Capture type",
+    "url":"Name",
+    "menuTitle":"Exception handling",
+    "menuNote":"Set the type of exception that may occur and choose a resolution"
+    },
+    "throwError": {
+    "errDesc":"Exception description",
+    "UndefinedException":"Undefined exception - undefined exception",
+    "WEBException":"Webexception - network access exception",
+    "SQLException":"Sqlexception - operation database exception",
+    "IllegalAccessException":"Illegalaccessexception - insufficient privilege exception",
+    "NoSuchFieldException":"Nosuchfieldexception - there is no exception for the property",
+    "ArrayIndexOutOfBoundsException":"ArrayIndexOutOfBoundsException array subscript out of bounds exception",
+    "ClassCastException":"ClassCastException - type cast exception",
+    "FileNotCreateException":"Filenotcreateexception - create file exception",
+    "FileTypeException":"Filetypeexception - file type exception",
+    "FileNotFoundException":"FileNotFoundException - file not found exception",
+    "SystemException":"SystemException - system exception",
+    "SeleniumException":"Selenium exception IE browser module exception",
+    "ElementNotFoundException":"Elementnotfoundexception - element not found exception",
+    "errType":"Exception type",
+    "menuTitle":"Exception throw",
+    "menuNote":"Throw an exception, usually used with exception capture or force the process to terminate"
+    },
+    "saveVCode": {
+    "fileName":"Captcha file name",
+          "savePath":"Saved path",
+          "capture":"Grab.",
+          "xpath":"Element path (XPath)",
+          "menuTitle":"Save captcha image",
+          "menuNote":"Enter the location of captcha element to get captcha image at runtime and save it to the specified path"
+      },
+      "elementPos": {
+          "outParam":"Output variable naming",
+          "elementPos":"Element position (POS)",
+          "capturePos":"Capture page elements (POS)"
+      },
+      "open": {
+          "url":"Open the web address",
+          "menuTitle":"Open web page",
+          "menuNote":"Open the web page where you enter the web address"
+      },
+      "waitFindELe": {
+          "waitTime":"Select the timeout",
+          "xpath":"Element path (XPath)",
+          "goon":"Do you want to follow script execution",
+          "capture":"Grab.",
+          "menuTitle":"Wait until the target element appears to continue",
+          "menuNote":"Wait for the target element to load, and when the element appears, the process continues"
+      },
+      "mouseDownOrUp": {
+          "xpath":"Element path (XPath)",
+          "mouse_type":"Mouse mode",
+          "mouseup":"mouseup",
+          "mousedown":"mousedown",
+          "goon":"Do you want to follow script execution",
+          "capture":"Grab.",
+          "menuTitle":"Click on the web element (MouseDown / mouseup)",
+          "menuNote":"(will be deleted later)"
+      },
+      "click": {
+          "goon":"Do you want to follow script execution",
+          "hand":"Simulated gestures.",
+          "mousedown_up":"Simulate MouseDown, up",
+          "click":"click",
+          "click_type":"Action",
+          "xpath":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Click on the page element.",
+          "menuNote":"Enter element location for runtime click on element"
+      },
+      "changeAttributeName": {
+          "newAttr":"Changed value",
+          "attr":"Select properties to change",
+          "xpath":"Element path (XPath)",
+          "menuTitle":"Change page element properties",
+          "menuNote":"Change target attribute of target element"
+      },
+      "classClickString": {
+          "strObject":"A matching text value is required",
+          "className":"The class of the element",
+          "xpath":"Iframe path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Click a specific element according to the class name.",
+          "menuNote":"According to the specified text, click the eligible elements in a specific range"
+      },
+      "closePage": {
+          "text-box":"Close current page (TAB)",
+          "menuTitle":"Close current page (TAB)",
+          "menuNote":"Close current page or tab"
+      },
+      "getElePosition": {
+          "outParam":"Output variable naming",
+          "xpath":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Get the screen position of the element in operation",
+          "menuNote":"Enter the element path to get the coordinates of the element on the screen at runtime and save it as a variable"
+      },
+      "getPageURL": {
+          "outParam":"Output variable naming",
+          "menuTitle":"Get URL URI of current page",
+          "menuNote":"Get current page URL and save as variable"
+      },
+      "openIframe": {
+          "goon":"Do you want to follow script execution",
+          "openNew":"New tab",
+          "xpath":"Framework element path (XPath)",
+          "capture-iframe":"Grab.",
+          "menuTitle":"Open frame",
+          "menuNote":"Enter the frame path to open the target frame at runtime"
+      },
+      "InnerHTML": {
+          "outParam":"Output variable naming",
+          "xpath":"xpath",
+          "xpathEle":"Element path (XPath)",
+          "html":"html",
+          "text":"text",
+          "getType":"Data type",
+          "capture":"Grab.",
+          "menuTitle":"Get page element content",
+          "menuNote":"Enter the element path to get the contents of the element at runtime and save them as variables"
+      },
+      "resemblance": {
+          "outParam":"Output variable naming",
+          "xpath":"xpath",
+          "html":"html",
+          "text":"text",
+          "getType":"Data type",
+          "xpathAlike":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Get similar element content",
+          "menuNote":"Enter the element path to get the contents of the element and its similar elements at runtime and save them as variables"
+      },
+      "canGetEle": {
+          "outParam":"Output parameter naming",
+          "xpath":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Determine whether an element exists.",
+          "menuNote":"Enter the path of the element to use at runtime to detect the existence of the element"
+      },
+      "getAttributeName": {
+          "outParam":"Output variable naming",
+          "capture":"Grab.",
+          "xpath":"Element path (XPath)",
+          "menuTitle":"Get page element properties",
+          "menuNote":"Enter the element path to get the element property at runtime and save it as a variable"
+      },
+      "mouseover": {
+          "goon":"Do you want to follow script execution",
+          "xpath":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Mouse move to element",
+          "menuNote":"Enter the element path to move the mouse to the location of the element at run time"
+      },
+      "inputInfo": {
+          "input":"Fill in the content",
+          "xpath":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Fill in the input box",
+          "menuNote":"Enter the input box path to fill in the input box at runtime"
+      },
+      "historyBack": {
+          "text-box":"Page fallback function",
+          "menuTitle":"Page back",
+          "menuNote":"Current page back"
+      },
+      "pageFresh": {
+          "text-box":"Page refresh function",
+          "menuTitle":"Page refresh",
+          "menuNote":"Current page refresh"
+      },
+      "getTable": {
+          "outParam":"Output variable naming",
+          "xpath":"xpath",
+          "html":"html",
+          "text":"text",
+          "getType":"Data type",
+          "capture":"Grab.",
+          "xpathEle":"Element path (XPath)",
+          "menuTitle":"Select table contents",
+          "menuNote":"Enter a table path to get the contents of the table at run time and save them as variables"
+      },
+      "getList": {
+          "outParam":"Output variable naming",
+          "xpath":"xpath",
+          "html":"html",
+          "text":"text",
+          "getType":"Data type",
+          "capture":"Grab.",
+          "xpathEle":"Element path (XPath)",
+          "menuTitle":"Select list contents",
+          "menuNote":"Enter the list path to get the contents of the list at run time and save them as variables"
+      },
+      "selectOption": {
+          "goon":"Do you want to follow script execution",
+          "matchText":"Match content (input drop-down option content or regular expression)",
+          "php":"Regular matching",
+          "like":"Congealing matching",
+          "all":"Exact match",
+          "matchType":"Matching mode",
+          "xpathEle":"Element path (XPath)",
+          "capture":"Grab.",
+          "menuTitle":"Select the contents of the drop-down box",
+          "menuNote":"Enter drop-down path to select target option at runtime"
+      },
+      "globalWaitTime": {
+          "floatWaitTime":"Please input the waiting floating time (MS) (optional)",
+          "WaitTime":"Please enter the waiting time (MS)",
+          "menuTitle":"Global waiting time",
+          "menuNote":"Set the waiting time for running between global nodes.",
+          "pretreatmentWaitTime":"Please input the preprocessing waiting time (MS) (optional)",
+          "chromeBrowserWaitTime":"Please input the waiting time (MS) of browser (chrome) module (optional)",
+          "internetExplorerWaitTime":"Please input the waiting time of browser (ie) module (MS) (optional)",
+          "yingyonggongnengWaitTime":"Please input the waiting time of application function module (MS) (optional)",
+          "microsoftApplicationWaitTime":"Please input the waiting time of Microsoft Application module (MS) (optional)",
+          "variantHandlingWaitTime":"Please input the waiting time of variable processing module (MS) (optional)",
+          "workflowControlWaitTime":"Please input the waiting time of logical process module (MS) (optional)",
+          "shujubiaogeWaitTime":"Please input the waiting time (MS) of data table module (optional)",
+          "fileOperateWaitTime":"Please enter the file operation waiting time (MS) (optional)",
+          "keyboardAndMouseWaitTime":"Please fill in the Ms button",
+          "dataInterfaceUtilWaitTime":"Please input the waiting time of database module (MS) (optional)",
+          "exceptionsWaitTime":"Please input the waiting time of exception capture module (MS) (optional)",
+          "databaseUtilWaitTime":"Please input the waiting time of external interface module (MS) (optional)",
+          "systemUtilWaitTime":"Please input the waiting time of system function module (MS) (optional)",
+          "excelHandlingWaitTime":"Please input the waiting time (MS) of Excel function module (optional)",
+          "docUtilWaitTime":"Please input the waiting time of document function module (MS) (optional)",
+          "ocrWaitTime":"Please input the waiting time (MS) of OCR function module (optional)",
+          "customizedApplicationWaitTime":"Please fill in the Ms option",
+          "finalHandlingWaitTime":"Please enter the waiting time (MS) of the end processing module (optional)"
+      },
+      "importFile": {
+          "outParam":"Output variable naming",
+          "businessDescription":"Business description",
+          "filePath":"Select file",
+          "menuTitle":"Read data table",
+          "menuNote":"Docking the data table data transmitted from central control"
+      },
+      "importTextFile": {
+          "outParam":"Output variable naming",
+          "businessDescription":"Business description",
+          "filePath":"File name",
+          "select_filePath":"Select file",
+          "menuTitle":"Read text file",
+          "menuNote":"Docking text file data transferred from central control"
+      },
+      "catchRecordingTime":{
+          "recordingTime":"Please input abnormal screen recording time (MS)",
+          "menuTitle":"Setting the screen recording time of the strange ugliness",
+          "menuNote":"Set screen recording time"
+      },
+      "semantic": {
+          "outParam":"Output variable naming",
+          "debuggerData":"Debug use cases",
+          "fileName":"File name"
+      },
+      "ActuatorForVerify": {
+          "rectangle":"Y, coordinate)",
+          "name":"Target element name",
+          "path":"Target element subscript",
+          "CScapture":"Grab.",
+          "winTitle":"Target element form name",
+          "menuTitle":"Determine whether the window is correct (based on the selected symbolic element)",
+          "menuNote":"Auxiliary actuator, determine whether the target window exists"
+      },
+      "clipboardWaitTime": {
+          "sleep":"Please enter the global clipboard waiting time (MS)",
+          "menuTitle":"Set global clipboard wait time.",
+          "menuNote":"Set global wait time for clipboard related node operations"
+      },
+      "cutLogMinLength": {
+          "cutMinLength":"Intercept minimum length",
+          "menuTitle":"Minimum length of intercepted log"
+      },
+      "isForbidKeybroadAndMouse": {
+          "active":"Disable mouse and keyboard",
+          "forbid":"Prohibition",
+          "notForbid":"No prohibition",
+          "menuTitle":"Disable mouse and keyboard"
+      },
+      "groupPassword": {
+          "outParam":"Output variable naming",
+          "group":"Please select password group",
+          "menuTitle":"Password group",
+          "menuNote":"Password group"
+      },
+      "setDirectory": {
+          "directory":"Select working directory",
+          "select_directory":"Select directory"
+      },
+      "IDAccountPassword": {
+          "attache":"Place of ownership",
+          "department":"Departments",
+          "password":"Password",
+          "username":"Account name",
+          "ID":"Set password group name",
+          "menuTitle":"Set password",
+          "menuNote":"Connect password group data transmitted from central control"
+      },
+      "callback_pixel_position": {
+          "outParam":"Output variable naming",
+          "errorRange":"Pixel allowable error value (default 0)",
+          "rectangle":"Screen rectangle range to find",
+          "right_down":"Bottom right.",
+          "right_up":"Top right.",
+          "left_down":"Bottom left.",
+          "left_up":"Top left.",
+          "down_right":"Lower right",
+          "down_left":"Lower left",
+          "up_right":"Up right.",
+          "up_left":"Upper left",
+          "fd_type":"Select the direction of search.",
+          "CScapturePos":"Capture desktop element (position)",
+          "rgb":"Enter the pixel RGB you want to find.",
+          "menuTitle":"Positioning pixel coordinates",
+          "menuNote":"Positioning pixel coordinates"
+      },
+      "CSMove_element": {
+          "mouseMove":"Mouse movement",
+          "mouseClick":"Left click",
+          "rectangle":"Element coordinates (x, y)",
+          "path":"Element subscript",
+          "winTitle":"Element form name",
+          "processName":"Element process name",
+          "CScapture":"Capture desktop elements",
+          "outParam":"CSMove_element.outParam",
+          "menuTitle":"Element positioning",
+          "menuNote":"Locate window elements"
+      },
+      "CSMoveForName": {
+          "rectangle":"Element coordinates (x, y)",
+          "name":"Element name",
+          "path":"Element subscript",
+          "winTitle":"Element form name",
+          "processName":"Element process name",
+          "CScapture":"Capture desktop elements",
+          "menuTitle":"Element name finding and location at the same level",
+          "menuNote":"Element sibling name finding and positioning"
+      },
+      "CSMoveForRelative": {
+          "relative":"Element relative coordinates",
+          "path":"Element subscript",
+          "winTitle":"Element form name",
+          "processName":"Element process name",
+          "CScapture":"Capture desktop elements",
+          "menuTitle":"Relative positioning of elements",
+          "menuNote":"Element relative positioning"
+      },
+      "CSMoveForVerify": {
+          "outParam":"Return value (true or false)",
+          "rectangle":"Element coordinates (x, y)",
+          "name":"Element name",
+          "path":"Element subscript",
+          "winTitle":"Element form name",
+          "processName":"Element process name",
+          "CScapture":"Capture desktop elements",
+          "menuTitle":"Element validation positioning",
+          "menuNote":"Verify window element positioning"
+      },
+      "CSMoveForChildName": {
+          "rectangle":"Element coordinates (x, y)",
+          "childname":"Sub element name",
+          "path":"Element subscript",
+          "winTitle":"Element form name",
+          "processName":"Element process name",
+          "CScapture":"Capture desktop elements",
+          "menuTitle":"Element sub level name finding and location",
+          "menuNote":"Element sub level name finding and location"
+      },
+      "readPDF": {
+          "outParam":"Output variable naming",
+          "openPath":"Select PDF file",
+          "selectFile":"Select file"
+      },
+      "importFile_normal": {
+          "outParam":"Output variable naming",
+          "businessDescription":"Business description",
+          "filePath":"Read file (supports CSV, xls, xlsx file types)",
+          "menuTitle":"Read data table",
+          "selectFile":"Select file",
+          "menuNote":"Read the contents of the target data table file"
+      },
+      "importTextFile_normal": {
+          "outParam":"Output variable naming",
+          "businessDescription":"Business description",
+          "filePath":"Read file (support word, TXT file type)",
+          "select_filePath":"importTextFile_normal.select_filePath",
+          "menuTitle":"Read document",
+          "selectFile":"Select file",
+          "menuNote":"Read the contents of the target document file"
+      },
+      "copyExclePart": {
+          "to_rectangle_right_up":"Start point of replication",
+          "to_sheet":"Source sheet name",
+          "to_file":"Select the file to copy to",
+          "rectangle":"Rectangle range to be copied",
+          "from_sheet":"Source sheet name",
+          "from_file":"Select source file",
+          "menuTitle":"Copy part of Excel table",
+          "selectFile":"Select file",
+          "menuNote":"Copy local ranges in the destination excel file to a specific location in another destination file"
+      },
+      "changeStyleExcle": {
+          "fontRGB":"Font color",
+          "fontSize":"Font size (default 12)",
+          "RGB":"Background color",
+          "isUnderline":"Underline.",
+          "isItalic":"Italics",
+          "isBlod":"Bold",
+          "style":"Style selection",
+          "rectangle":"Rectangle range for which the style needs to be changed.",
+          "sheet_name":"Sheet name (Excel file only)",
+          "filename":"Select the file you want to change the style of",
+          "menuTitle":"Change excel table cell style",
+          "selectFile":"Select file",
+          "menuNote":"Change the style of the target range in the excel file"
+      },
+      "PreciseReadFile": {
+          "outParam":"Output variable naming",
+          "text":"Text",
+          "object":"Cell object",
+          "dbType":"Select output result type",
+          "sheet_name":"Sheet name (Excel file only)",
+          "rectangle":"Read position (row, column)",
+          "filename":"Select the file you want to read.",
+          "menuTitle":"Reading data table cells",
+          "selectFile":"Select file",
+          "menuNote":"Read the data of the target cell in the target file"
+      },
+      "PreciseWriteFile": {
+          "filename":"Select the file to write to",
+          "sheet_name":"Sheet name (Excel file only)",
+          "rectangle":"Write position (row, column)",
+          "valueParam":"Data name to be saved",
+          "menuTitle":"Write data table cells",
+          "selectFile":"Select file",
+          "menuNote":"Fill in data to the target cell of the target file"
+      },
+      "exportFile": {
+          "outParam":"The full path name of the output file is a variable.",
+          "save-history":"History file alias",
+          "isSaveHistory":"Save to historical task",
+          "targetPath":"Saved path",
+          "filename":"File name",
+          "valueParam":"Data name to be saved",
+          "sheet_name":"Sheet name (Excel file only)",
+          "a":"Add",
+          "w":"Overlay",
+          "writeType":"Write type (txt only)",
+          "excel":"Excel",
+          "csv":"csv",
+          "fileType":"File types",
+          "newFileName":"History file alias",
+          "txt":"txt",
+          "word":"word",
+          "menuTitle":"Write data table",
+          "select_directory":"Select directory",
+          "menuNote":"Write data to target data table file"
+      },
+      "exportTextFile": {
+          "outParam":"Output variable naming",
+          "save-history":"Save history",
+          "isSaveHistory":"Do you want to keep history",
+          "targetPath":"Target path",
+          "filename":"File name",
+          "valueParam":"Value param",
+          "sheet_name":"Sheet name",
+          "a":"Additional",
+          "w":"Cover",
+          "writeType":"Write type",
+          "excel":"excel",
+          "csv":"csv",
+          "fileType":"File type",
+          "newFileName":"New file name",
+          "txt":"txt",
+          "word":"word",
+          "menuTitle":"Write document",
+          "menuNote":"Write data to target document file"
+      },
+      "koulingxuanze": {
+          "outParam":"Output variable naming",
+          "groupKey":"Password selection",
+          "chooseCmdGroup":"Password group selection",
+          "menuTitle":"Password selection",
+          "menuNote":"Select a password, output a new variable and name it"
+      },
+      "saveAccount": {
+          "outParam":"Output variable naming",
+          "pwdValue":"password",
+          "usernameValue":"username",
+          "realAccount":"Real account",
+          "testAccount":"Test account",
+          "operator":"Operator"
+      },
+      "head": {
+          "nav": {
+              "run":"Running",
+              "clean":"Empty",
+              "save":"Save.",
+              "read":"Read",
+              "import":"Import",
+              "export":"Export",
+              "showVar":"View parameters",
+              "unitTesting":"Unit testing",
+              "unitClean":"Empty",
+              "prev":"Revocation",
+              "next":"Redo.",
+              "showAnnotation":"Show comments",
+              "continue":"Continue"
+          }
+      },
+      "aside": {
+          "left": {
+              "atomicProcess":"Meta process",
+              "foreach":"List loop",
+              "if":"Conditional judgment",
+              "concurrence":"Concurrent processing",
+              "goto":"Point to process",
+              "breviary":"Mainstream process",
+              "selectTheIterationElement":"Please select iteration element",
+              "nameOfIndividualElements":"Naming of individual elements",
+              "ifBlockName":"Conditional block name",
+              "forBlockName":"List loop block name",
+              "gotoBlockName":"Point to process block name",
+              "executeWhenConditionsAreMet":"Meet conditions",
+              "executeWhenTheConditionsAreNotMet":"Does not meet the conditions",
+              "condition":"Conditions"
+          }
+      },
+      "content": {
+          "main": {
+              "start":"Start the process.",
+              "pretreatment":"Preprocessing",
+              "endNode":"End node",
+              "end":"End of process",
+              "outParam":"Out of ginseng",
+              "inParam":"Entering the reference",
+              "delete":"Delete",
+              "copy":"Replication node",
+              "paste":"Paste node",
+              "skip":"Skip node",
+              "transverseCopy":"Horizontal replication",
+              "point":"Add breakpoints",
+              "tryCatch":"Exception capture",
+              "addDesc":"Add comments.",
+              "packUp":"Put it away.",
+              "unfold":"Expand",
+              "addFlow":"Please add process",
+              "executeWhenConditionsAreMet":"Execute when conditions are met",
+              "executeWhenTheConditionsAreNotMet":"Execute when conditions are not met",
+              "isCoveredWithTheSameVariable":"A duplicate variable is detected. It is recommended to modify the current variable name, otherwise the previous duplicate variable will be overwritten.",
+              "forLoop":"For loop"
+          }
+      },
+      "alert": {
+          "yes":"Yes.",
+          "no":"No.",
+          "OK":"OK.",
+          "close":"Close",
+          "save":"Save.",
+          "saveAs":"Save as",
+          "continue":"Continue.",
+          "deleteSuccess":"Deleted successfully.",
+          "deleteFail":"Delete failed",
+          "saveSuccess":"Saved successfully.",
+          "saveFail":"Save failed",
+          "isCleanAllProcess":"Clear the flowchart?",
+          "isCleanAtomicProcess":"Clear the meta process?",
+          "noAuthorization":"Authorization is invalid or expired.",
+          "repeatTypes":"Duplicate type, please re-enter!",
+          "exporting":"Exporting",
+          "exportSuccess":"Export succeeded.",
+          "exportFail":"Export failed",
+          "fileTypeError":"File type error",
+          "connectFailSql":"Unable to get database information",
+          "isImport":"Import or not",
+          "importBtn":"Import",
+          "importAndExecuteBtn":"Import and execute",
+          "execute":"Execution.",
+          "cancel":"Cancel.",
+          "fileHasTriggerHowToHandle":"The file has been triggered. What kind of operation do you need to trigger?",
+          "isDelete":"Delete",
+          "insertFail":"Insert failed",
+          "isCoveredWithTheSame":"The same name is found. Do you want to override it?",
+          "titleTips":"Tips",
+          "isCloseApp":"Do you want to close the app",
+          "isSaveAs":"Save as?",
+          "isSave":"Save?",
+          "isRunWithWrongWindow":"No correct start window found! Do you want to continue?",
+          "globalDeclarations":"Global statement",
+          "mateflow":"Meta process",
+          "create":"Create",
+          "comeFromGlobal":"From global variables",
+          "comeFromMateFlow":"From meta process",
+          "compileTask":"Compiling task",
+          "copySuccess":"Copy succeeded.",
+          "copyFailed":"Copy failed",
+          "pasteSuccess":"Paste succeeded.",
+          "pasteFailed":"Paste failed",
+          "isDeleteMainFlowNode":"Delete the master process node",
+          "newVersionHasDown":"The new version has been downloaded. Do you want to restart the update now?",
+          "nowIsTheLastestVersion":"This is the latest version!",
+          "thisNodeCantDelete":"This node cannot be deleted!",
+          "update":"Update",
+          "checkOldScript":"Old version script detected, update?",
+          "readFailed":"Read error",
+          "thisStepWillCreateVariable":"Variables generated in this step",
+          "predictedGenerationVariableType":"Expected generation variable type is",
+          "errorReturningData":"Error in returning data!",
+          "launchIECshandleFailed":"Failed to start the tool to grab ie elements!",
+          "launchJavaCshandleFailed":"Failed to start grabbing Java element tool!",
+          "launchingUtils":"Opening tool",
+          "waitingHandleReturnVariable":"Waiting for tool variables to return",
+          "launchCshandleFailed":"Failed to start desktop tools!",
+          "error":"Error.",
+          "setting":"Settings",
+          "helping":"Help",
+          "toggleDevTools":"Switch developer tools",
+          "viewVersionImprint":"View version notes",
+          "refresh":"Refresh",
+          "systemSettings":"System settings",
+          "basicSetting ":"Basic settings",
+          "sudoReboot":"Bit flag after restart",
+          "unitTestVariableDefinition":"Unit test variable definition",
+          "exportDataModule":"Export data module",
+          "location":"Location",
+          "headline":"Title",
+          "type":"Type",
+          "describe":"Description",
+          "variableName":"Variable name",
+          "addNewType":"New type",
+          "variable":"Variables",
+          "globalVariable":"Global variables",
+          "partVariable":"Local variables",
+          "saveDataModule":"Save data module",
+          "editNote":"Edit comments",
+          "isCoverScript":"Is it covered?",
+          "import": {
+              "title":"Title",
+              "desc":"Description",
+              "createTime":"Creation time",
+              "updateTime":"Update time",
+              "homePage":"Home page",
+              "trailerPage":"Last page",
+              "operate":"Operation",
+              "select":"Select",
+              "delete":"Delete",
+              "newType":"New type",
+              "saveDataModule":"Save data module",
+              "all":"All"
+          }
+      },
+      "fs_delete_dir": {
+          "file":"Select the folder to delete.",
+          "menuTitle":"Delete folder",
+          "select_directory":"Select directory",
+          "menuNote":"Delete specified folder"
+      },
+      "pretreatment": {
+          "menuTitle":"Preprocessing"
+      },
+      "endNode": {
+        "menuTitle":"End node"
+      },
+      "chromeBrowser": {
+          "menuTitle":"Browser (chrome)"
+      },
+    "Customized function": {
+        "menuTitle": "Customized function"
+    },
+      "internetExplorer": {
+          "menuTitle":"Browser (ie)"
+      },
+      "yingyonggongneng": {
+          "menuTitle":"Application function"
+      },
+      "microsoftApplication": {
+          "outParam": {
+              "note":"Output a defined CS class, mainly used in Microsoft applications"
+          },
+          "Element": {
+              "note":"Enter a CS class"
+          },
+          "menuTitle":"Microsoft applications"
+      },
+      "variantHandling": {
+          "menuTitle":"Variable processing"
+      },
+      "workflowControl": {
+          "menuTitle":"Logical flow"
+      },
+      "shujubiaoge": {
+          "menuTitle":"Data table"
+      },
+      "fileOperate": {
+          "menuTitle":"File operations"
+      },
+      "keyboardAndMouse": {
+          "menuTitle":"Keyboard and mouse"
+      },
+      "dataInterfaceUtil": {
+          "menuTitle":"External interface"
+      },
+      "exceptions": {
+          "menuTitle":"Exception capture"
+      },
+      "databaseUtil": {
+          "menuTitle":"Database"
+      },
+      "excelHandling": {
+          "menuTitle":"Excel function"
+      },
+      "docUtil": {
+          "menuTitle":"Document function"
+      },
+      "ocr": {
+          "menuTitle":"OCR function"
+      },
+      "customizedApplication": {
+          "menuTitle":"Trial function"
+      },
+      "finalHandling": {
+          "menuTitle":"End processing"
+      },
+      "systemUtil": {
+          "menuTitle":"System functions"
+      },
+      "setting": {
+          "host":"Central control address",
+          "name":"Yes.",
+          "port":"Central control port",
+          "beatTime":"Heartbeat time.",
+          "globalWaitTime":"Global waiting time",
+          "isDev":"Is it a development mode",
+          "isTrue":"Yes.",
+          "isFalse":"No.",
+          "isLocalSql":"Is it a local database",
+          "waitOutTime":"Timeout",
+          "workDirectory":"Working directory",
+          "language":"Language"
+        },
+
+      "SeleniumBrowser": {
+        "menuTitle": "Browser(selenium)"
+        },
+        "input_browser": {
+            "menuTitle": "Fill in the input box(selenium)"
+        },
+        "open_browser": {
+            "menuTitle": "Open web page(selenium)"
+        },
+        "close_browser": {
+            "menuTitle": "Close all pages(selenium)"
+        },
+        "close_browser_page": {
+            "menuTitle": "Close current page(selenium)"
+        },
+        "existence_browser": {
+            "menuTitle": "Determine whether the element exists(selenium)"
+        },
+        "refresh_browser": {
+            "menuTitle": "Web refresh(selenium)"
+        },
+        "forward_browser": {
+            "menuTitle": "Web forward(selenium)"
+        },
+        "back_browser": {
+            "menuTitle": "Page back(selenium)"
+        },
+        "alert_click_browser": {
+            "menuTitle": "Operation pop up box(selenium)"
+        },
+        "batchGrab_browser": {
+            "menuTitle": "Batch grab element data(selenium)"
+        },
+        "grab_browser": {
+            "menuTitle": "Grab single element data(selenium)"
+        },
+        "click_browser": {
+            "menuTitle": "Click on page elements(selenium)"
+        },
+        "max_browser":{
+            "menuTitle": "Maximize web window(selenium)"
+        },
+        "wait_browser":{
+            "menuTitle": "Wait for the page element to appear and continue(selenium)"
+        },
+        "url_browser":{
+            "menuTitle": "Get URL variable(selenium)"
+        },
+        "grab_alert_browser":{
+            "menuTitle": "Get browser pop-up content(selenium)"
+        },
+        "attribute_browser":{
+            "menuTitle": "Get page element properties(selenium)"
+        },
+        "select_browser":{
+            "menuTitle": "Select the page drop-down box option(selenium)"
+        },
+        "outlook_send":{
+            "menuTitle": "Outlook send mail"
+        },
+        "screencap":{
+            "menuTitle": "Videotape"
+        },
+        "outlook_get":{
+            "menuTitle": "Outlook get mail message object"
+        },
+        "outlook_reply":{
+            "menuTitle": "Outlook reply email"
+        }, 
+        "outlook_use": {
+            "menuTitle": "Outlook Mail operation"
+        }, 
+        "outlook_move": {
+            "menuTitle": "Outlook mobile mail"
+        }, 
+        "outlook_relay": {
+            "menuTitle": "Outlook forward mail"
+        },
+        "encrypt_aes":{
+            "menuTitle": "AES encryption"
+        },
+        "extend_python":{
+            "menuTitle": "Extension components"
+        },
+        "decrypt_aes":{
+            "menuTitle": "AES decryption"
+        },
+        "script_call":{
+            "menuTitle": "Execute script"
+        },
+        "xml2json":{
+            "menuTitle": "XML format to JSON"
+        },
+        "json2xml":{
+            "menuTitle": "JSON format to XML"
+        }
+    }
