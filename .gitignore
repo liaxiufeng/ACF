@@ -8,3 +8,5 @@ cs_robot/robot/bin/**/
 
 
 /cs_robot/robot/Lib
+
+.idea
