@@ -1,5 +1,21 @@
 const electron = require('electron');
 const app = electron.app;
+
+//添加vue-devtools插件
+app.on('ready', async () => {
+    let extension_path = path.join(
+        process.cwd(),
+        "extensions",
+        "vue_devtools",
+        "5.3.4_0"
+    )
+    await electron.session.defaultSession.loadExtension(
+        extension_path,
+        // 打开本地文件也应用拓展
+        {allowFileAccess: true}
+    )
+})
+
 const ipc = electron.ipcMain;
 const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
@@ -183,10 +199,12 @@ function initPresWindow() {
     presWindow = new BrowserWindow({
         width: 1200,
         height: 800,
-        webPreferences: {
-                 nodeIntegration: true,
-                 webviewTag: true
-            },
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            webviewTag: true,
+            contextIsolation: false,
+        },
         show: false,
         frame: false,
     })
@@ -229,10 +247,12 @@ function createWindow() {
         minWidth: 1370,
         minHeight: 750,
         height: 750,
-        webPreferences: {
-                 nodeIntegration: true,
-                 webviewTag: true
-            },
+        webPreferences: {
+            nodeIntegration: true,
+            enableRemoteModule: true,
+            webviewTag: true,
+            contextIsolation: false,
+        },
         frame: false,
         show: true
     })
@@ -394,10 +414,11 @@ app.on('ready', function () {
         width: 1200,
         height: 800,
         show: false,
-        webPreferences: {
-                 nodeIntegration: true,
-                 webviewTag: true
-            },
+        webPreferences: {
+            nodeIntegration: true,
+            webviewTag: true,
+            contextIsolation: false,
+        },
         frame: false
     })
     calcWindow.setMenu(null)
@@ -452,10 +473,11 @@ app.on('ready', function () {
         presWindow = new BrowserWindow({
             width: 1200,
             height: 800,
-            webPreferences: {
-                     nodeIntegration: true,
-                     webviewTag: true
-                },
+            webPreferences: {
+                nodeIntegration: true,
+                webviewTag: true,
+                contextIsolation: false,
+            },
             show: true,
             frame: false,
         })
