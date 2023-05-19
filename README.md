@@ -5,7 +5,12 @@
 cmd执行：node -v，查看是否安装成功
 
 安装python@2.7.15，配置环境变量
-cmd执行：python，查看是否安装成功
+① cmd执行：python，查看是否安装成功
+② 安装目录python27\Lib\site-packages下新增sitecustomize.py,写入配置，
+# encoding='GBK' 
+import sys  
+reload(sys)  
+sys.setdefaultencoding('GBK')  
 
 安装vs@2017
 ① 双击vs_BuildTools.exe，无脑下一步，选择2017版本安装
