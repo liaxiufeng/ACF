@@ -1,7 +1,7 @@
 const ipc = require('electron').ipcRenderer;
 const remote = require('electron').remote;
 const util = require("../main/util")
-const net = remote.getGlobal('net');
+const net = global.net;
 
 const log = require("../tool/log/logger");
 

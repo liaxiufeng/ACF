@@ -1,3 +1,41 @@
+#electron  v5.0.13启动事项
+```text
+1.安装所需环境(部分安装包位置：envirment)
+安装node@12.19.0，配置环境变量
+cmd执行：node -v，查看是否安装成功
+
+安装python@2.7.15，配置环境变量
+cmd执行：python，查看是否安装成功
+
+安装vs@2017
+① 双击vs_BuildTools.exe，无脑下一步，选择2017版本安装
+② 在2017版本右上角‘修改’中添加c++编译环境
+cmake@3.26.3
+① 配置cmake环境变量， 
+② 执行如下命令
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+git config --global http.postBuffer 88880000
+git config --global http.sslVerify "false"
+
+2.执行npm config edit，写入如下配置
+electron_mirror=https://npm.taobao.org/mirrors/electron/
+node_sqlite3_binary_host_mirror=http://npm.taobao.org/mirrors 
+
+3.安装node-gyp@3.8.0
+npm i -g node-gyp@3.8.0
+
+4.安装依赖
+npm i
+
+5.编译c++插件
+npm run electron-rebuild
+
+6.启动程序
+npm start
+
+```
+
+
 # II-RPA
 		不需要安装，不需要注册，纯开源，纯代码，无限制，自由使用研究，只要感兴趣，都可以尝试，
 		有想法问题可以及时沟通，看到即回，

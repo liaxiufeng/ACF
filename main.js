@@ -1,22 +1,28 @@
 const electron = require('electron');
 const app = electron.app;
-
+// electron版本v6以上添加此配置
+app.allowRendererProcessReuse = false
 //添加vue-devtools插件
 app.on('ready', async () => {
     let extension_path = path.join(
         process.cwd(),
         "extensions",
         "vue_devtools",
-        "5.3.4_0"
+        "6.5.0_0"
     )
-    await electron.session.defaultSession.loadExtension(
-        extension_path,
-        // 打开本地文件也应用拓展
-        {allowFileAccess: true}
-    )
+    //v5
+    BrowserWindow.addDevToolsExtension(extension_path)
+    //v14+
+    // await electron.session.defaultSession.loadExtension(
+    //     extension_path,
+    //     // 打开本地文件也应用拓展
+    //     {allowFileAccess: true}
+    // )
 })
 
 const ipc = electron.ipcMain;
+// const remoteMain = require('@electron/remote/main')
+// remoteMain.initialize()
 const BrowserWindow = electron.BrowserWindow;
 const globalShortcut = electron.globalShortcut;
 const dialog = electron.dialog;
@@ -208,6 +214,7 @@ function initPresWindow() {
         show: false,
         frame: false,
     })
+    // remoteMain.enable(presWindow.webContents)
     presWindow.setMenu(null)
     presWindow.loadURL('file://' + __dirname + "/app/pages/debugger.html") //新窗口
     presWindow.webContents.on('did-finish-load', function () {
@@ -256,6 +263,7 @@ function createWindow() {
         frame: false,
         show: true
     })
+    // remoteMain.enable(mainWindow.webContents)
     //初始化第debug窗口
     initPresWindow();
     globalShortcut.register(properties.sysConfig.stopTask, () => {
@@ -421,6 +429,7 @@ app.on('ready', function () {
         },
         frame: false
     })
+    // remoteMain.enable(calcWindow.webContents)
     calcWindow.setMenu(null)
     calcWindow.loadURL('file://' + __dirname + "/app/pages/calc.html")
     if (runFilePath === null) {
@@ -481,6 +490,7 @@ app.on('ready', function () {
             show: true,
             frame: false,
         })
+        // remoteMain.enable(presWindow.webContents)
         presWindow.maximize();
         presWindow.setMenu(null)
         presWindow.loadURL('file://' + __dirname + "/app/pages/debugger.html") //新窗口

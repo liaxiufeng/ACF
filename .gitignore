@@ -10,3 +10,7 @@ cs_robot/robot/bin/**/
 /cs_robot/robot/Lib
 
 .idea
+
+#日志文件
+app/tool/log/logs/error/*
+app/tool/log/logs/info/*
