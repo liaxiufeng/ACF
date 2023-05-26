@@ -2,23 +2,6 @@ const electron = require('electron');
 const app = electron.app;
 // electron版本v6以上添加此配置
 app.allowRendererProcessReuse = false
-//添加vue-devtools插件
-app.on('ready', async () => {
-    let extension_path = path.join(
-        process.cwd(),
-        "extensions",
-        "vue_devtools",
-        "6.5.0_0"
-    )
-    //v5
-    BrowserWindow.addDevToolsExtension(extension_path)
-    //v14+
-    // await electron.session.defaultSession.loadExtension(
-    //     extension_path,
-    //     // 打开本地文件也应用拓展
-    //     {allowFileAccess: true}
-    // )
-})
 
 const ipc = electron.ipcMain;
 // const remoteMain = require('@electron/remote/main')
@@ -413,6 +396,15 @@ app.on('gpu-process-crashed', function (e) {
     })
 })
 app.on('ready', function () {
+    //添加vue-devtools插件
+    //v5
+    BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+    //v14+
+    // await electron.session.defaultSession.loadExtension(
+    //     'node_modules/vue-devtools/vender',
+    //     // 打开本地文件也应用拓展
+    //     {allowFileAccess: true}
+    // )
     process.argv.forEach((e, i) => {
         if (e.includes("-run")) {
             runFilePath = process.argv[i + 1]
