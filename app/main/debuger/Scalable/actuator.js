@@ -102,7 +102,7 @@ var util = {
         if (el) {
             el.focus();
             let tagName = el.nodeName.toLowerCase();
-            if (tagName == "input" || tagName == "textarea" || tagName == "select") {
+            if (tagName === "input" || tagName === "textarea" || tagName === "select") {
                 el.value = Value;
             } else {
                 el.innerText = el.innerText + Value
@@ -112,6 +112,7 @@ var util = {
             this.triggerEvent(el, 'keypress');
             this.triggerEvent(el, 'focus');
             this.triggerEvent(el, 'change');
+            this.triggerEvent(el, 'input');
             this.triggerEvent(el, 'blur');
         }
     },
