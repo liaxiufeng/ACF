@@ -380,6 +380,19 @@ var officeUtil = {
             };
         });
     },
+    writeJson: function (targetPath, data, writeType, callback) {
+        let ctx_data = JSON.stringify(data).replace(/\n/g, "\r\n");
+        var string_data = ctx_data + "\r\n";
+
+        fs.writeFile(targetPath, string_data, { flag: writeType }, (err) => {
+            if (err) {
+                callback(errorStack("FileNotCreateException", err))
+            } else {
+                console.log('The file has been saved!')
+                callback(null, targetPath)
+            }
+        });
+    },
     readTableData: function (parameters, callback) {
         console.log(1);
         let filePath = parameters.filePath;
@@ -434,6 +447,9 @@ var officeUtil = {
             case "txt":
                 this.writeTxt(targetPath + filename + ".txt", data_value, writeType, callback);
                 break;
+            case "json":
+                this.writeJson(targetPath + filename + ".json", data_value, writeType, callback)
+                break
             default:
                 alert('暂不支持该格式文件!');
                 callback(errorStack("FileTypeException", new Error('暂不支持该格式文件!')));
