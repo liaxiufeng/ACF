@@ -139,12 +139,7 @@ function writeFilesToTarget(stempDst, stempSrc) {
 
     fs.readdirSync(stempSrc).forEach((item) => {
         if (!fs.existsSync(path.join(stempDst, "/" + item)) || true) {
-
-            fs.writeFileSync(path.join(stempDst, "/" + item), fs.readFileSync(path.join(stempSrc, "/" + item)), 'utf8', function (err) {
-                if (err) {
-                    console.log(err)
-                }
-            })
+            fs.writeFileSync(path.join(stempDst, "/" + item), fs.readFileSync(path.join(stempSrc, "/" + item)), {encoding:'utf-8'})
         }
     })
 }
@@ -282,7 +277,7 @@ function createWindow() {
         mainWindow.show();
         mainWindow.focus()
         if (properties.sysConfig.isDev) {
-            mainWindow.webContents.openDevTools();
+            mainWindow.openDevTools();
         }
     })
 
@@ -316,8 +311,8 @@ function createWindow() {
     //开启debugger窗口
     ipc.on('debugger_init', function (event, data) {
         if (properties.sysConfig.isDev) {
-            presWindow.webContents.openDevTools();
             presWindow == null ? initPresWindow() : "";
+            presWindow.openDevTools();
         }
         presWindow.show();
         presWindow.maximize();
