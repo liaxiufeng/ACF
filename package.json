@@ -75,7 +75,7 @@
     "nzh": "^1.0.3",
     "officegen": "^0.4.5",
     "oracledb": "^4.2.0",
-    "pdf2json": "^2.0.2",
+    "pdf2json": "1.1.7",
     "python-shell": "^2.0.1",
     "regedit": "^3.0.0",
     "request": "^2.88.0",
