@@ -127,6 +127,13 @@ onload = function () {
         console.log(`[${new Date().format("yyyy-MM-dd HH:mm:ss.S")}] compeleteyDo: ${stepInfo.type}`)
     })
     worker.on("readyDo", function (stepInfo) {
+        //global.var在流程预处理开始前会初始化为{}
+        if (stepInfo.type === 'pretreatment'){
+            localStorage.setItem('__', JSON.stringify({}))
+            // if (fs.existsSync('D:/debugger.txt')){
+            //     fs.unlinkSync('D:/debugger.txt')
+            // }
+        }
         ipc.send("logInfo", {
             code: 200,
             msg: "ready do:" + JSON.stringify(stepInfo)

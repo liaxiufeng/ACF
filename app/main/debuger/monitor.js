@@ -231,39 +231,40 @@ $("#main-body").on("click", ".webview-pages li", function () {
 });
 
 // chorme do
-incident.addEVent("click", function (step, callback, ctx) {
-    once(webview, "ipc-message", function (event) {
-        event.stopPropagation();
-        if (event.channel.code == 200) {
-            fs.readFile(sysConfig.rootPath + '/app/main/debuger/Scalable/actuator.js', function (err, data) {
-                if (err) {
-                    throw err;
-                    console.error(err);
-                    callback(err);
-                    return;
-                }
-                data += ';action(' + JSON.stringify(step) + ');'
-                webview.executeJavaScript(data, true, function (data) {
-                    callback();
-                })
-            });
-        } else {
-            incident.webAction(event.channel)
-        }
-    })
-
-    let isload = setInterval(() => {
-        if (webview != null && !webview.isLoading()) {
-            clearInterval(isload);
-            webview.send('action', step);
-        }
-    }, 500)
-    if (webview != null && !webview.isLoading()) {
-        clearInterval(isload);
-        webview.send('action', step);
-    }
-
-})
+// incident.addEVent("click", function (step, callback, ctx) {
+//     once(webview, "ipc-message", function (event) {
+//         event.stopPropagation();
+//         if (event.channel.code == 200) {
+//             fs.readFile(sysConfig.rootPath + '/app/main/debuger/Scalable/actuator.js', function (err, data) {
+//                 if (err) {
+//                     throw err;
+//                     console.error(err);
+//                     callback(err);
+//                     return;
+//                 }
+//                 console.log('resolver:  /app/main/debuger/Scalable/actuator.js', step)
+//                 data += ';action(' + JSON.stringify(step) + ');'
+//                 webview.executeJavaScript(data, true, function (data) {
+//                     callback();
+//                 })
+//             });
+//         } else {
+//             incident.webAction(event.channel)
+//         }
+//     })
+//
+//     let isload = setInterval(() => {
+//         if (webview != null && !webview.isLoading()) {
+//             clearInterval(isload);
+//             webview.send('action', step);
+//         }
+//     }, 500)
+//     if (webview != null && !webview.isLoading()) {
+//         clearInterval(isload);
+//         webview.send('action', step);
+//     }
+//
+// })
 incident.addEVent("chromeOp", function (step, callback, ctx) {
     once(webview, "ipc-message", function (event) {
         event.stopPropagation();
@@ -278,6 +279,8 @@ incident.addEVent("chromeOp", function (step, callback, ctx) {
                 return;
             }
             data += ';action(' + JSON.stringify(step) + ');'
+            console.log('resolver:  /app/main/debuger/Scalable/actuator.js', step)
+            console.log('该js文件已被liujun注释，当你看到这个提示时，可能需要重新启用该js文件')
             webview.executeJavaScript(data, true, function (data) {
                 callback();
             })

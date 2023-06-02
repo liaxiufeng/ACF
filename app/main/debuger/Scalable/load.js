@@ -192,6 +192,8 @@ function findSync(startPath) {
 }
 let fileNames = overallCtx.get("extendJS");
 //fileNames.pushimposysConfig.rootPath + 'app/main/util/systemParamUtil.js')
-fileNames.forEach(e => {
-    loadJS(e)
-})
+if (fileNames && fileNames.length) {
+    fileNames.forEach(e => {
+        loadJS(e)
+    })
+}

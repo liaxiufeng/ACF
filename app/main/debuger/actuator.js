@@ -836,6 +836,21 @@ var common = {
         }
         common._callback(ret);
     },
+    //mouseUp操作
+    _mouseUp: function (jsonObject) {
+        ret.action = "mouseUp"
+
+        let el = common._getElment(jsonObject);
+        if (common._jubyType(el) == null) {
+            ret.code = 500;
+            ret.msg = "无法找到元素位置"
+        } else {
+            util.triggerEvent(el, 'mouseup');
+            ret.code = 200;
+            ret.msg = null;
+        }
+        common._callback(ret);
+    },
     //mouseDown或者mouseUp操作
     _mouseDownOrUp: function (jsonObject) {
         ret.action = "mouseDownOrUp"
@@ -1127,8 +1142,42 @@ function getNowFormatDate() {
     return currentdate;
 }
 
+/**
+ * 处理含一个或多个js脚本的字符串
+ * js脚本格式${{js脚本}}，相当于(()=>{js脚本})()
+ * 每一个完整的流程过程，\_\_可用来定义变量记录状态，\_\_在流程预处理开始前会初始化为{}
+ *
+ * @param jsStr {string} 含js脚本的字符串
+ * @returns {*} 处理js脚本后的字符串
+ */
+const resolverJS = (jsStr) => {
+    log('accept:    ' + jsStr)
+    if (!jsStr) {
+        log('result:    ' + jsStr)
+        return jsStr
+    }
+    const matchRes = /\${{((?!\${{).)+}}/g.exec(jsStr)
+    if (!matchRes || !matchRes.length) {
+        log('result:    ' + jsStr)
+        return jsStr
+    }
+    const index = matchRes.index
+    let matchStr = matchRes[0];
+    const __ = localStorage.getItem('__') ? JSON.parse(localStorage.getItem('__')) : {}
+    const resolvedStr = jsStr.slice(0, index) + eval(`((__) => {
+        ${matchStr.slice(3, -2)}
+    })(__)`) + jsStr.slice(index + matchStr.length)
+    localStorage.setItem('__', JSON.stringify(__))
+    return resolverJS(resolvedStr)
+}
 
+const log = (msg) => {
+    // fs.writeFileSync('D:/debugger.txt', JSON.stringify(msg) + '\n', {flag: 'a'})
+}
 function action(step) {
+    if (step && step.parameters && step.parameters.xpath){
+        step.parameters.xpath = resolverJS(step.parameters.xpath)
+    }
     switch (step.type) {
         case 'historyBack':
             window.history.back();
@@ -1169,7 +1218,7 @@ function action(step) {
             break;
         case "click":
             // console.log("clcik" + getNowFormatDate())
-            // common._wait(step.parameters, common._click)
+            common._wait(step.parameters, common._click)
             common._waitForCallBack(step.parameters);
             break;
         case "mouseDownOrUp":
@@ -1249,7 +1298,8 @@ function action(step) {
     }
 }
 ipcRenderer.on('action', function (event, step) {
-    console.log(step)
+    log('resolver:  /app/main/debuger/actuator.js')
+    log(step)
     action(step);
     // let error={}
 
