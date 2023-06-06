@@ -952,19 +952,30 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
         pUrl = URL.parse("http://" + parameters.url);
     }
     const headers = {}
+    function parseValIfJson(val) {
+        try {
+            if (/(^{.*}$)|(^\[.*]$)/.test(val)){
+                return eval(`(()=>{return ${val}})()`)
+            } else {
+                return val;
+            }
+        } catch (e) {
+            return val;
+        }
+    }
     for (let key in parameters) {
         //请求头参数
         if (/^k\d+$/.test(key)) {
             let num = key.replace(/[^0-9]/ig, "");
             if (parameters[key]) {
-                headers[parameters[key]] = parameters['v' + num];
+                headers[parameters[key]] = parseValIfJson(parameters['v' + num]);
             }
         }
         //请求体参数
         else if (/^key\d+$/.test(key)) {
             let num = key.replace(/[^0-9]/ig, "");
             if (parameters[key]){
-                postParam[parameters[key]] = parameters['value' + num];
+                postParam[parameters[key]] = parseValIfJson(parameters['value' + num]);
                 hasParam = true;
             }
         }
