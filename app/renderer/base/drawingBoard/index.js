@@ -670,14 +670,28 @@ jQuery(document).ready(function ($) {
             $("#coverModal").find(">.cover-alert").attr("comeindex", thisParantId)
             switch ($(event.target).text()) {
                 case "http接口":
+                    //请求头
+                    let httpHeader = $(".liHeaderAdd").eq(0).clone(true).find('[type="text"]').val("").parent().parent().find('.sub').css("display", "inline").parent();
+                    $(".liHeaderAdd").eq(0).find(".sub").hide();
+                    //请求参数
                     let httpTemp = $(".liadd").eq(0).clone(true).find('[type="text"]').val("").parent().parent().find('.sub').css("display", "inline").parent();
                     $(".liadd").eq(0).find(".sub").hide();
                     thisNodeInfo.parameters.forEach(e => {
                         if ($("#coverModal [name='" + e.name + "']").length > 0) {
-                            if ($("#coverModal [name=" + e.name + "]").attr("type") != 'radio') {
+                            if ($("#coverModal [name=" + e.name + "]").attr("type") !== 'radio') {
                                 $("#coverModal [name=" + e.name + "]").val(e.value)
                             }
-                        } else {
+                        }
+                        //请求头参数
+                        else if (/^k\d+$/.test(e.name)){
+                            let id = e.name.replace(/[^0-9]/ig, "")
+                            httpHeader.clone(true).find("[name='k1']").attr("name", "k" + id).parent().find("[name='v1']").attr("name", "v" + id).parent().parent().appendTo(".httpHeaders")
+                            if ($("#coverModal [name=" + e.name + "]").attr("type") == 'text') {
+                                $("#coverModal [name=" + e.name + "]").val(e.value)
+                            }
+                        }
+                        //请求参数
+                        else if (/^key\d+$/.test(e.name)){
                             let id = e.name.replace(/[^0-9]/ig, "")
                             httpTemp.clone(true).find("[name='key1']").attr("name", "key" + id).parent().find("[name='value1']").attr("name", "value" + id).parent().parent().appendTo(".httpparameters")
                             if ($("#coverModal [name=" + e.name + "]").attr("type") == 'text') {

@@ -951,12 +951,22 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
     if (pUrl.protocol !== "https:" && pUrl.protocol !== "http:") {
         pUrl = URL.parse("http://" + parameters.url);
     }
+    const headers = {}
     for (let key in parameters) {
-        if (key.includes("key")) {
+        //请求头参数
+        if (/^k\d+$/.test(key)) {
             let num = key.replace(/[^0-9]/ig, "");
-            if (parameters[key] == "") continue;
-            postParam[parameters[key]] = parameters['value' + num];
-            hasParam = true;
+            if (parameters[key]) {
+                headers[parameters[key]] = parameters['v' + num];
+            }
+        }
+        //请求体参数
+        else if (/^key\d+$/.test(key)) {
+            let num = key.replace(/[^0-9]/ig, "");
+            if (parameters[key]){
+                postParam[parameters[key]] = parameters['value' + num];
+                hasParam = true;
+            }
         }
     }
     let http
@@ -979,9 +989,11 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
         method: parameters.httpType || "POST",
         headers: {
             "Content-Type": parameters.ContentType,
+            ...headers
         }
     };
     var str = '';
+    debugger
     var req = http.request(opts, function (res) {
         res.setEncoding('utf8');
         res.on('data', function (data) {

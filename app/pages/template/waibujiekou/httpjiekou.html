@@ -24,6 +24,31 @@
         width: 20px;
     }
 
+    .liHeaderAdd {
+        padding-left: 15px;
+    }
+
+    .liHeaderAdd input {
+        display: inline-block !important;
+        width: 200px !important;
+        margin: 0px !important;
+    }
+
+    .liHeaderAdd>div {
+        position: relative;
+        display: inline-block !important;
+        width: 200px !important;
+        margin: 0px !important;
+    }
+
+    .liHeaderAdd>button {
+        /* background: transparent!important; */
+        line-height: 16px !important;
+        font-size: 27px !important;
+        vertical-align: middle;
+        width: 20px;
+    }
+
     .add {
         /* color: chartreuse!important; */
         background: url("../img/icon-button-add.png")no-repeat center !important;
@@ -71,6 +96,25 @@
                 <input type="radio" name="httpType" value="get">get
             </label>
         </p>
+    </div>
+    <div class="input-box httpHeaders stipulation">
+        <p>
+            <b>请求头</b>
+            <b>：</b>
+        </p>
+        <div class="liHeaderAdd">
+            <lable>key:</lable>
+            <input type="text" name="k1">
+            <lable>value:</lable>
+            <div class="input-box">
+                <input type="text" name="v1">
+                <ul class="common-list parameters-can-select"></ul>
+                <i class="toggleType"></i>
+                <i class="xiala-icon parameters"></i>
+            </div>
+            <button type="button" class="add"></button>
+            <button type="button" class="sub"></button>
+        </div>
     </div>
     <div class="input-box">
         <p>
@@ -126,6 +170,7 @@
         <input type="text" name="rename">
     </div>
     <input type="hidden" class="item-type" name="httpApi" value="1">
+    <input type="hidden" class="item-type" name="httpHeaderApi" value="1">
 </div>
 <div class="liucheng-item-tips">
     <p class="dom-active-dec" title="">
@@ -136,18 +181,43 @@
 
 <script>
     $(function () {
-        var httptemp = $(".liadd").eq(0).clone(true);
-        $(".httpparameters").on("click", ".add", function () {
-            let id = parseInt($('[name="httpApi"]').val()) + 1;
-            httptemp.clone(true).find("[name='key1']").attr("name", "key" + id).parent().find("[name='value1']").attr("name", "value" + id).parent().parent().appendTo(".httpparameters")
+        //携带的请求头参数
+        const httpHeaderTemp = $(".liHeaderAdd").eq(0).clone(true);
+        let $httpHeaders = $(".httpHeaders");
+        $httpHeaders.on("click", ".add", function () {
+            let $i = $('[name="httpHeaderApi"]');
+            let id = parseInt($i.val()) + 1;
+            httpHeaderTemp.clone(true).find("[name='k1']").attr("name", "k" + id).parent().find("[name='v1']").attr("name", "v" + id).parent().parent().appendTo(".httpHeaders")
+            modal.refreshModal()
+            $(".liHeaderAdd").eq(0).find(".sub").hide();
+            // $(".httpHeaders input[name='value" + id + "']").after("<ul class='parameters-can-select'></ul>")
+            // console.log(newLI);
+            addNewLI();
+            $i.val(id)
+        })
+        $httpHeaders.on("click", ".sub", function () {
+            $(this).parent().remove();
+            $(".liHeaderAdd").eq(0).find(".sub").hide();
+            modal.refreshModal();
+            addNewLI()
+        })
+        $(".httpHeaders .liHeaderAdd").eq(0).find(".sub").hide();
+
+        //携带的参数变量
+        const $httpTemp = $(".liadd").eq(0).clone(true);
+        let $httpparameters = $(".httpparameters");
+        $httpparameters.on("click", ".add", function () {
+            let $i = $('[name="httpApi"]');
+            let id = parseInt($i.val()) + 1;
+            $httpTemp.clone(true).find("[name='key1']").attr("name", "key" + id).parent().find("[name='value1']").attr("name", "value" + id).parent().parent().appendTo(".httpparameters")
             modal.refreshModal()
             $(".liadd").eq(0).find(".sub").hide();
             // $(".httpparameters input[name='value" + id + "']").after("<ul class='parameters-can-select'></ul>")
             // console.log(newLI);
             addNewLI();
-            $('[name="httpApi"]').val(id)
+            $i.val(id)
         })
-        $(".httpparameters").on("click", ".sub", function () {
+        $httpparameters.on("click", ".sub", function () {
             $(this).parent().remove();
             $(".liadd").eq(0).find(".sub").hide();
             modal.refreshModal();
