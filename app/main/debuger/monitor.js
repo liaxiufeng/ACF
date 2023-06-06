@@ -954,6 +954,10 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
     const headers = {}
     function parseValIfJson(val) {
         try {
+            //如果不为字符串，直接返回
+            if (typeof val !== 'string') {
+                return val;
+            }
             if (/(^{.*}$)|(^\[.*]$)/.test(val)){
                 return eval(`(()=>{return ${val}})()`)
             } else {
@@ -988,10 +992,8 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
     }
     if ("application/json; charset=utf-8" == parameters.ContentType) {
         postParamString = JSON.stringify(postParam);
-
     } else {
         postParamString = require('querystring').stringify(postParam);
-
     }
     var opts = {
         host: pUrl.hostname,
@@ -1004,7 +1006,6 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
         }
     };
     var str = '';
-    debugger
     var req = http.request(opts, function (res) {
         res.setEncoding('utf8');
         res.on('data', function (data) {
