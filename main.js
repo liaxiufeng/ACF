@@ -393,7 +393,7 @@ app.on('gpu-process-crashed', function (e) {
 app.on('ready', function () {
     //添加vue-devtools插件
     //v5
-    BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
+    //BrowserWindow.addDevToolsExtension('node_modules/vue-devtools/vender')
     //v14+
     // await electron.session.defaultSession.loadExtension(
     //     'node_modules/vue-devtools/vender',

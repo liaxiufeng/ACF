@@ -1,5 +1,5 @@
 {
-  "name": "designer",
+  "name": "ACF",
   "version": "1.0.7",
   "description": "this id a designer in rpaV2",
   "main": "main.js",
@@ -14,8 +14,8 @@
     "start": "electron .",
     "startpack": "webpack && electron .",
     "webapckgo": "webpack",
-    "packager": "electron-packager ./ robot-designer --w --out ./OutApp --version 5.0.13 --platform=win32 --arch=x64 --icon=./app/img/icon.ico --overwrite --ignore=node_modules/electron-* --ignore=node_modules/.bin --ignore=.git --ignore=OutApp --ignore=app/main/debuger/monitor.js --ignore=app/main/debuger/Scalable/main.js",
-    "packager-w32": "electron-packager ./ robot-designer-w32 --w --out ./OutApp --version 5.0.13 --platform=win32 --arch=ia32 --icon=./app/img/icon.ico --overwrite --ignore=node_modules/electron-* --ignore=node_modules/.bin --ignore=.git --ignore=OutApp --ignore=app/main/debuger/monitor.js --ignore=app/main/debuger/Scalable/main.js",
+    "packager": "electron-packager ./ acf --w --out ./OutApp --electron-version=5.0.13 --platform=win32 --arch=x64 --icon=./app/img/icon.ico --overwrite --ignore=node_modules/electron-* --ignore=node_modules/.bin --ignore=.git --ignore=OutApp",
+    "packager-w32": "electron-packager ./ acf-w32 --w --out ./OutApp --electron-version=5.0.13 --platform=win32 --arch=ia32 --icon=./app/img/icon.ico --overwrite --ignore=node_modules/electron-* --ignore=node_modules/.bin --ignore=.git --ignore=OutApp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron-rebuild": "electron-rebuild -w sqlite3 -a x64 --abi=72 --target=5.0.13",
     "rebuild": "npm rebuild --runtime=electron --target=5.0.13 --disturl=https://atom.io/download/atom-shell --abi=72"
