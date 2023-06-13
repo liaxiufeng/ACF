@@ -405,7 +405,7 @@ $(document).ready(function () {
     currentWindowSize = remote.getCurrentWindow().getContentSize();
 
     concurrence();
-    $(".logo-tit-box .logo-main-tit").text("数字员工");
+    $(".logo-tit-box .logo-main-tit").text("");
     $("#set_main_setter").text(`copyright@北明软件`).css({
         cursor: "not-allowed",
         color:"#E6E9ED", 
