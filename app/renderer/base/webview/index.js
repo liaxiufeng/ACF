@@ -66,7 +66,7 @@ $(document).ready(function () {
             if (protocol === 'http:' || protocol === 'https:') {
                 //shell.openExternal(e.url)
                 $('.page-jump-http input').val(e.url);
-                let webItem = "<webview src='" + e.url + "' id='foo" + len + "' style='display: inline-flex;' preload='../renderer/base/webview/listen.js' partition='main'></webview>";
+                let webItem = "<webview src='" + e.url + "' id='foo" + len + "' style='display: inline-flex;' preload='../renderer/base/webview/listen.js' partition='main' useragent='Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'></webview>";
                 let addLi = "<li index='" + len + "'><div class='icon-newlabel'></div><span class='page-title'>page" + len + "</span><span class='webview-page-tools'><i></i></span></li>"
                 $(".main-botttpm").append(webItem);
                 //$(".main-botttpm").find("webview").hide();

@@ -91,7 +91,7 @@ function webviewEvent(dom) {
             // $('.page-jump-http input').val(e.url);
             // $("#foo")[0].loadURL(e.url);
             // $(dom).attr("disablewebsecurity", "");
-            let webItem = `<webview src='${e.url} ' id='foo${len}' style='width:auto' minheight='700' preload='../main/debuger/actuator.js' partition='${$("#foo").attr("partition")}' userAgent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36' ></webview > `;
+            let webItem = `<webview src='${e.url} ' id='foo${len}' style='width:auto' minheight='700' preload='../main/debuger/actuator.js' partition='${$("#foo").attr("partition")}' userAgent='Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36' ></webview > `;
             let addLi = "<li index='" + len + "'><span class='page-title'>page" + len + "</span><span class='webview-page-tools'><i></i></span></li>"
             $("#main-body").append(webItem);
             // $("#main-body").find("webview").hide();
