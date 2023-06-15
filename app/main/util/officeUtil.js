@@ -328,20 +328,21 @@ var officeUtil = {
             try {
                 // var create_file = fs.openSync(targetPath, 'w');
                 // var workbook = XLSX_xu.readFile(targetPath);
-                if (writeType == 'a+') {
-                    var wb = XLSX.readFile(targetPath);
-                    var ws = wb.Sheets[sheet_name];
-                    XLSX.utils.sheet_add_aoa(ws, ctx_data, { origin: -1 });
-                    XLSX.writeFile(wb, targetPath);
+                let wb
+                if (writeType === 'a+' && fs.existsSync(targetPath)) {
+                    wb = XLSX.readFile(targetPath)
+                    const ws = wb.Sheets[sheet_name]
+                    if (ws) {
+                        XLSX.utils.sheet_add_aoa(ws, ctx_data, {origin: -1});
+                    }
+                    else {
+                        wb.Sheets[sheet_name] = XLSX.utils.aoa_to_sheet(ctx_data)
+                    }
                 } else {
-                    var wb = XLSX.utils.book_new();
-                    var ws = XLSX.utils.aoa_to_sheet(ctx_data, );
-                    XLSX.utils.book_append_sheet(wb, ws, sheet_name);
-                    // var ws2 = wb.Sheets["Sheet1"];
-                    // XLSX.utils.sheet_add_aoa(ws2, ctx_data);
-
-                    XLSX.writeFile(wb, targetPath);
+                    wb = XLSX.utils.book_new();
+                    XLSX.utils.book_append_sheet(wb, XLSX.utils.aoa_to_sheet(ctx_data), sheet_name);
                 }
+                XLSX.writeFile(wb, targetPath)
                 callback(null, targetPath);
             } catch (error) {
                 console.log(error);
