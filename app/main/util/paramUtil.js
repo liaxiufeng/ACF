@@ -149,6 +149,12 @@ let paramUtil = {
         //变量取出
         let paramName = parameters.paramName;
         let value = parameters.regexValue;
+        //如果变量是字符串
+        if (Object.prototype.toString.call(paramName) == '[object String]') {
+            try {
+                paramName = JSON.parse(paramName);
+            } catch (e){}
+        }
         callback(null, paramName[value]);
     },
 
