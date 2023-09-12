@@ -99,6 +99,23 @@ var officeUtil = {
             }
         });
     },
+    readJson: function (filePath, callback) {
+        fs.readFile(filePath, 'utf-8', (err, data) => {
+            if (err) {
+                callback(errorStack("FileNotFoundException", err), null);
+                return;
+            } else {
+                try {
+                    fs.readFile(filePath, (err, buffer) => {
+                        let gbkdata = iconv.decode(buffer, 'gbk');
+                        callback(null, gbkdata);
+                    })
+                } catch (error) {
+                    callback(error, data);
+                }
+            }
+        });
+    },
     readWordx: function (filePath, callback) {
         const AdmZip = require('adm-zip'); //引入查看zip文件的包
         const zip = new AdmZip(filePath); //filePath为文件路径
@@ -421,6 +438,9 @@ var officeUtil = {
             case "text":
             case "txt":
                 this.readTxt(filePath, callback)
+                break;
+            case "json":
+                this.readJson(filePath, callback)
                 break;
             default:
                 callback(errorStack("FileTypeException", '暂不支持该格式文件!'));
