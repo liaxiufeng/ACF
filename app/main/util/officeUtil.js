@@ -105,13 +105,13 @@ var officeUtil = {
                 callback(errorStack("FileNotFoundException", err), null);
                 return;
             } else {
-                try {
+                if (data.includes("�")) {
                     fs.readFile(filePath, (err, buffer) => {
                         let gbkdata = iconv.decode(buffer, 'gbk');
                         callback(null, gbkdata);
                     })
-                } catch (error) {
-                    callback(error, data);
+                } else {
+                    callback(null, data);
                 }
             }
         });
