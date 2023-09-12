@@ -109,7 +109,7 @@ function ForEach() {
             worker.incident.addForList(step_id, this)
         }
         callback = callback || function () { };
-        if (!arr.length) {
+        if (!arr || !arr.length) {
             return callback();
         }
         var completed = 0;
