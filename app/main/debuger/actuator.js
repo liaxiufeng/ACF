@@ -291,13 +291,15 @@ var util = {
     optionClick: function (el, value) {
         if (!el) return;
 
-        let array = this.getTagNameCollection(el, "option");
-        if (array == null || array.length == 0) {
+        let array = this.getTagNameCollection(el, "option")
+        if (!array || !array.length){
+            array = this.getTagNameCollection(el, "li")
+        }
+        if (!array || !array.length) {
             return;
         }
-
-        for (var item = 0; item < array.length; item++) {
-            var itemText = verify._trim(array[item].outerText);
+        for (let item = 0; item < array.length; item++) {
+            const itemText = verify._trim(array[item].outerText);
             if (itemText == value) {
                 el.focus();
                 array[item].selected = true;
@@ -360,8 +362,11 @@ var util = {
             return "-1";
         }
 
-        var array = this.getTagNameCollection(el, "option");
-        if (array == null || array.length == 0) {
+        let array = this.getTagNameCollection(el, "option");
+        if (!array || !array.length){
+            array = this.getTagNameCollection(el, "li")
+        }
+        if (!array || !array.length) {
             return "-1";
         }
 
@@ -379,7 +384,6 @@ var util = {
                     }
                     break;
                 case "like":
-                    // alert(1)
                     if (itemText.indexOf(value) > -1) {
                         el.focus();
                         array[item].selected = true;
