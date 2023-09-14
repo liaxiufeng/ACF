@@ -1035,7 +1035,7 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
             "Content-Type": parameters.ContentType,
             ...headerObject
         }
-    };
+    }
     var str = '';
     var req = http.request(opts, function (res) {
         res.setEncoding('utf8');
@@ -1064,7 +1064,7 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
     req.on('error', function (err) {
         callback(errorStack("WEBException", err));
     });
-    if (bodyObject) req.write(bodyObject);
+    if (bodyObject) req.write(JSON.stringify(bodyObject));
     req.end();
 })
 
