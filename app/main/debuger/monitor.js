@@ -943,58 +943,89 @@ incident.addEVent("paramsPaste", function (step, callback, ctx) { //变量黏贴
 })
 
 incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
+    //将url上的参数添加到参数列表中
+    const qs = require('querystring')
     let parameters = step.parameters;
-    let postParam = {};
-    let postParamString;
-    let hasParam = false;
-    let pUrl = URL.parse(parameters.httpUrl);
-    if (pUrl.protocol !== "https:" && pUrl.protocol !== "http:") {
-        pUrl = URL.parse("http://" + parameters.url);
+    const { query, search } = URL.parse(parameters.httpUrl)
+    const httpQuery = query ? qs.parse(query) : {}
+    let $index = 1
+    for (const key in httpQuery) {
+        parameters[`httpQuery-key-${$index}`] = key
+        parameters[`httpQuery-value-${$index++}`] = httpQuery[key]
     }
-    const headers = {}
+    //处理参数
     function parseValIfJson(val) {
         try {
             //如果不为字符串，直接返回
-            if (typeof val !== 'string') {
+            if (typeof val !== 'string' || !/(^{.*}$)|(^\[.*]$)/.test(val.trim())) {
                 return val;
-            }
-            if (/(^{.*}$)|(^\[.*]$)/.test(val)){
-                return eval(`(()=>{return ${val}})()`)
             } else {
-                return val;
+                return eval(`(()=>{return ${val}})()`)
             }
         } catch (e) {
             return val;
         }
     }
+    const headerObject = {}
+    const bodyObjectKeys = []
+    const queryObject = {}
     for (let key in parameters) {
         //请求头参数
-        if (/^k\d+$/.test(key)) {
+        if (/^httpHeaders-key-\d+$/.test(key)) {
             let num = key.replace(/[^0-9]/ig, "");
             if (parameters[key]) {
-                headers[parameters[key]] = parseValIfJson(parameters['v' + num]);
+                headerObject[parameters[key]] = parseValIfJson(parameters[`httpHeaders-value-${num}`]);
             }
         }
-        //请求体参数
-        else if (/^key\d+$/.test(key)) {
+        //params参数
+        else if (/^httpParams-key-\d+$/.test(key)) {
             let num = key.replace(/[^0-9]/ig, "");
-            if (parameters[key]){
-                postParam[parameters[key]] = parseValIfJson(parameters['value' + num]);
-                hasParam = true;
+            if (parameters[key]) {
+                queryObject[parameters[key]] = parseValIfJson(parameters[`httpParams-value-${num}`]);
+            }
+        }
+        //query参数
+        else if (/^httpQuery-key-\d+$/.test(key)) {
+            let num = key.replace(/[^0-9]/ig, "");
+            if (parameters[key]) {
+                queryObject[parameters[key]] = parseValIfJson(parameters[`httpQuery-value-${num}`]);
+            }
+        }
+        //body参数
+        else if (/^httpBody-key-\d+$/.test(key)) {
+            let num = key.replace(/[^0-9]/ig, "");
+            bodyObjectKeys.push({kKey: key, vKey: `httpBody-value-${num}`})
+        }
+    }
+    //body参数
+    let bodyObject = null
+    if (bodyObjectKeys && bodyObjectKeys.length) {
+        //body为数组时,变量名填写[]
+        const isArray = bodyObjectKeys.every(item => parameters[item.kKey] === '[]')
+        //body为字符串时,不填变量名,且只能添加一个变量
+        const isString = bodyObjectKeys.length === 1 && parameters[bodyObjectKeys[0].kKey] === ''
+        if (isArray) {
+            bodyObject = bodyObjectKeys.map(item => parseValIfJson(parameters[item.vKey]))
+        }
+        else if (isString) {
+            bodyObject = parseValIfJson(parameters[bodyObjectKeys[0].vKey])
+        }
+        //body为对象时,变量名填写对象的key
+        else {
+            bodyObject = {}
+            for (const {kKey, vKey} of bodyObjectKeys) {
+                if (parameters[kKey]) {
+                    bodyObject[parameters[kKey]] = parseValIfJson(parameters[vKey])
+                }
             }
         }
     }
-    let http
-    if (pUrl.protocol == "https:") {
-        http = require('https');
-    } else {
-        http = require('http');
-    }
-    if ("application/json; charset=utf-8" == parameters.ContentType) {
-        postParamString = JSON.stringify(postParam);
-    } else {
-        postParamString = require('querystring').stringify(postParam);
-    }
+    //将所有查询参数添加到url中
+    const searchStartIndex = (search && parameters.httpUrl.indexOf(search)) || -1
+    const url = searchStartIndex + 1 ? parameters.httpUrl.substring(0, searchStartIndex) : parameters.httpUrl
+    let pUrl = URL.parse(`${url}?${qs.stringify(queryObject)}`)
+    let http = pUrl.protocol == "https:" ? require('https') : require('http')
+    //发送请求
     var opts = {
         host: pUrl.hostname,
         port: pUrl.port,
@@ -1002,7 +1033,7 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
         method: parameters.httpType || "POST",
         headers: {
             "Content-Type": parameters.ContentType,
-            ...headers
+            ...headerObject
         }
     };
     var str = '';
@@ -1033,7 +1064,7 @@ incident.addEVent("httpApi", function (step, callback, ctx) { //http接口
     req.on('error', function (err) {
         callback(errorStack("WEBException", err));
     });
-    if (hasParam) req.write(postParamString);
+    if (bodyObject) req.write(bodyObject);
     req.end();
 })
 

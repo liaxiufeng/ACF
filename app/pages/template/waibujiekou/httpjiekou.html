@@ -1,47 +1,22 @@
 <style>
-    .liadd {
+    .liAdd {
         padding-left: 15px;
     }
 
-    .liadd input {
+    .liAdd input {
         display: inline-block !important;
         width: 200px !important;
         margin: 0px !important;
     }
 
-    .liadd>div {
+    .liAdd>div {
         position: relative;
         display: inline-block !important;
         width: 200px !important;
         margin: 0px !important;
     }
 
-    .liadd>button {
-        /* background: transparent!important; */
-        line-height: 16px !important;
-        font-size: 27px !important;
-        vertical-align: middle;
-        width: 20px;
-    }
-
-    .liHeaderAdd {
-        padding-left: 15px;
-    }
-
-    .liHeaderAdd input {
-        display: inline-block !important;
-        width: 200px !important;
-        margin: 0px !important;
-    }
-
-    .liHeaderAdd>div {
-        position: relative;
-        display: inline-block !important;
-        width: 200px !important;
-        margin: 0px !important;
-    }
-
-    .liHeaderAdd>button {
+    .liAdd>button {
         /* background: transparent!important; */
         line-height: 16px !important;
         font-size: 27px !important;
@@ -75,7 +50,6 @@
     }
 </style>
 <div class="main-con-item">
-
     <div class="input-box">
         <p>
             <b>URL</b>
@@ -97,25 +71,6 @@
             </label>
         </p>
     </div>
-    <div class="input-box httpHeaders stipulation">
-        <p>
-            <b>请求头</b>
-            <b>：</b>
-        </p>
-        <div class="liHeaderAdd">
-            <lable>key:</lable>
-            <input type="text" name="k1">
-            <lable>value:</lable>
-            <div class="input-box">
-                <input type="text" name="v1">
-                <ul class="common-list parameters-can-select"></ul>
-                <i class="toggleType"></i>
-                <i class="xiala-icon parameters"></i>
-            </div>
-            <button type="button" class="add"></button>
-            <button type="button" class="sub"></button>
-        </div>
-    </div>
     <div class="input-box">
         <p>
             <b>选择请求头类型</b>
@@ -130,17 +85,58 @@
             </label>
         </p>
     </div>
-    <div class="input-box httpparameters stipulation">
+    <div class="input-box stipulation params" id="httpHeaders">
         <p>
-            <b>变量</b>
-            <b>：</b>
+            <b>请求头：</b>
         </p>
-        <div class="liadd">
+        <input type="hidden" class="item-type" name="httpApi" value="1">
+        <div class="liAdd">
             <lable>key:</lable>
-            <input type="text" name="key1">
+            <input type="text" name="key-1">
             <lable>value:</lable>
             <div class="input-box">
-                <input type="text" name="value1">
+                <input type="text" name="value-1">
+                <ul class="common-list parameters-can-select"></ul>
+                <i class="toggleType"></i>
+                <i class="xiala-icon parameters"></i>
+            </div>
+            <button type="button" class="add"></button>
+            <button type="button" class="sub"></button>
+        </div>
+    </div>
+    <div class="input-box stipulation params" id="httpParams">
+        <p>
+            <b>parameter ：</b>
+        </p>
+        <input type="hidden" class="item-type" name="httpApi" value="1">
+        <div class="liAdd">
+            <lable>key:</lable>
+            <input type="text" name="key-1">
+            <lable>value:</lable>
+            <div class="input-box">
+                <input type="text" name="value-1">
+                <ul class="common-list parameters-can-select"></ul>
+                <i class="toggleType"></i>
+                <i class="xiala-icon parameters"></i>
+            </div>
+            <button type="button" class="add"></button>
+            <button type="button" class="sub"></button>
+        </div>
+    </div>
+    <div class="input-box stipulation params" id="httpBody">
+        <p>
+            <b>body ：</b><br/>
+            <b>①body为对象时,变量名填写对象的属性名</b><br/>
+            <b>②body为数组时,变量名填写[]</b><br/>
+            <b>③body为字符串时,不填变量名,且只能添加一个变量</b>
+        </p>
+        <input type="hidden" class="item-type" name="httpApi" value="1">
+        <div class="liAdd">
+            <lable>key:</lable>
+            <input type="text" name="key-1">
+            <lable>value:</lable>
+            <div class="input-box">
+                <input type="text" name="value-1">
                 <ul class="common-list parameters-can-select"></ul>
                 <i class="toggleType"></i>
                 <i class="xiala-icon parameters"></i>
@@ -169,8 +165,6 @@
         </p>
         <input type="text" name="rename">
     </div>
-    <input type="hidden" class="item-type" name="httpApi" value="1">
-    <input type="hidden" class="item-type" name="httpHeaderApi" value="1">
 </div>
 <div class="liucheng-item-tips">
     <p class="dom-active-dec" title="">
@@ -181,50 +175,31 @@
 
 <script>
     $(function () {
-        //携带的请求头参数
-        const httpHeaderTemp = $(".liHeaderAdd").eq(0).clone(true);
-        let $httpHeaders = $(".httpHeaders");
-        $httpHeaders.on("click", ".add", function () {
-            let $i = $('[name="httpHeaderApi"]');
-            let id = parseInt($i.val()) + 1;
-            httpHeaderTemp.clone(true).find("[name='k1']").attr("name", "k" + id).parent().find("[name='v1']").attr("name", "v" + id).parent().parent().appendTo(".httpHeaders")
-            modal.refreshModal()
-            $(".liHeaderAdd").eq(0).find(".sub").hide();
-            // $(".httpHeaders input[name='value" + id + "']").after("<ul class='parameters-can-select'></ul>")
-            // console.log(newLI);
-            addNewLI();
-            $i.val(id)
+        //携带的参数
+        $(".params").each(function (key, paramsElem) {
+            const $params = $(paramsElem)
+            const idAttr = $params.attr("id")
+            let $liAdd = $params.find(".liAdd").eq(0)
+            $liAdd.find("[name='key-1']").attr("name", `${idAttr}-key-1`).parent().find("[name='value-1']").attr("name", `${idAttr}-value-1`)
+            const $liAddTemplate = $liAdd.clone(true)
+            $params.on('click', '.add', function () {
+                let httpApi = $params.find('[name="httpApi"]')
+                let index = parseInt(httpApi.val()) + 1
+                $liAddTemplate.clone(true).find(`[name='${idAttr}-key-1']`).attr("name", `${idAttr}-key-${index}`).parent().find(`[name='${idAttr}-value-1']`).attr("name", `${idAttr}-value-${index}`).parent().parent().appendTo($params)
+                modal.refreshModal()
+                $params.find(".liAdd").eq(0).find(".sub").hide();
+                addNewLI();
+                httpApi.val(index)
+            })
+            $params.on('click', '.sub', function () {
+                $(this).parent().remove()
+                $params.find(".liAdd").eq(0).find(".sub").hide()
+                modal.refreshModal()
+                addNewLI()
+            })
+            $params.find(".liAdd").eq(0).find(".sub").hide()
         })
-        $httpHeaders.on("click", ".sub", function () {
-            $(this).parent().remove();
-            $(".liHeaderAdd").eq(0).find(".sub").hide();
-            modal.refreshModal();
-            addNewLI()
-        })
-        $(".httpHeaders .liHeaderAdd").eq(0).find(".sub").hide();
-
-        //携带的参数变量
-        const $httpTemp = $(".liadd").eq(0).clone(true);
-        let $httpparameters = $(".httpparameters");
-        $httpparameters.on("click", ".add", function () {
-            let $i = $('[name="httpApi"]');
-            let id = parseInt($i.val()) + 1;
-            $httpTemp.clone(true).find("[name='key1']").attr("name", "key" + id).parent().find("[name='value1']").attr("name", "value" + id).parent().parent().appendTo(".httpparameters")
-            modal.refreshModal()
-            $(".liadd").eq(0).find(".sub").hide();
-            // $(".httpparameters input[name='value" + id + "']").after("<ul class='parameters-can-select'></ul>")
-            // console.log(newLI);
-            addNewLI();
-            $i.val(id)
-        })
-        $httpparameters.on("click", ".sub", function () {
-            $(this).parent().remove();
-            $(".liadd").eq(0).find(".sub").hide();
-            modal.refreshModal();
-            addNewLI()
-        })
-        $(".httpparameters .liadd").eq(0).find(".sub").hide();
-    });
+    })
 
     function addNewLI() {
         if (modal.$data.editLiuchengItem.isEditExistedItem) {
