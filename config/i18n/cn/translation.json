@@ -162,6 +162,11 @@
         "menuTitle": "提取变量",
         "menuNote": "通过变量的下标值或键名提取出部分变量，输出一个新变量并为其命名"
     },
+    "javascript引擎": {
+        "outParam": "输出变量命名：",
+        "menuTitle": "使用js方法，获得新的变量",
+        "menuNote": "通过现有的变量，执行js方法，获得一个新的变量"
+    },
     "convertParam": {
         "outParam": "输出变量命名：",
         "regexValue": "正则表达式：",

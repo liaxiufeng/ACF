@@ -65,6 +65,11 @@ function isTargetOutParameter(ele) {
             hasOut = true;
             hasGetOut = true;
             break;
+        case "javascriptEngine":
+            outParam = "javascriptEngine";
+            hasOut = true;
+            hasGetOut = true;
+            break;
 
         case "saveNewParam":
             outParam = "saveNewParam";

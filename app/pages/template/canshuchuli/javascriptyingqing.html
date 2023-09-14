@@ -1,0 +1,152 @@
+<style>
+    .liAdd {
+        padding-left: 15px;
+    }
+
+    .liAdd input {
+        display: inline-block !important;
+        width: 200px !important;
+        margin: 0px !important;
+    }
+
+    .liAdd>div {
+        position: relative;
+        display: inline-block !important;
+        width: 200px !important;
+        margin: 0px !important;
+    }
+
+    .liAdd>button {
+        /* background: transparent!important; */
+        line-height: 16px !important;
+        font-size: 27px !important;
+        vertical-align: middle;
+        width: 20px;
+    }
+
+    .add {
+        /* color: chartreuse!important; */
+        background: url("../img/icon-button-add.png")no-repeat center !important;
+    }
+
+    .add:active {
+        background: url("../img/icon-button-add-click.png")no-repeat center !important;
+    }
+
+    .sub {
+        background: url("../img/icon-button-remove.png")no-repeat center !important;
+    }
+
+    .sub:active {
+        background: url("../img/icon-button-remove-click.png")no-repeat center !important
+    }
+
+    .xiala-icon {
+        top: 0px !important;
+    }
+
+    .cover-box .toggleType {
+        top: 0px !important;
+    }
+</style>
+<div class="main-con-item">
+    <input type="hidden" class="item-type" name="javascriptEngine">
+    <div class="input-box">
+        <p>
+            <b>javascript方法 ：</b><br>
+            <b></b>
+        </p>
+        <div class="input-box">
+            <input type="text" name="javascriptMethod">
+            <ul class="common-list parameters-can-select"></ul>
+            <i class="xiala-icon parameters"></i>
+            <i class="toggleType"></i>
+        </div>
+    </div>
+    <div class="input-box stipulation params" id="args">
+        <p>
+            <b>传入参数 ：</b>
+        </p>
+        <input type="hidden" name="indexCount" value="1">
+        <div class="liAdd">
+            <div class="input-box">
+                <input type="text" name="value-1">
+                <ul class="common-list parameters-can-select"></ul>
+                <i class="toggleType"></i>
+                <i class="xiala-icon parameters"></i>
+            </div>
+            <button type="button" class="add"></button>
+            <button type="button" class="sub"></button>
+        </div>
+    </div>
+    <div class="input-box">
+        <p>
+            <b>输出变量命名：</b>
+        </p>
+        <input type="text" name="rename">
+    </div>
+</div>
+<div class="liucheng-item-tips">
+    <p class="dom-active-dec" title="">
+        <i class=""></i>
+        <em class="">：</em>执行自定义js方法，并将返回值输出新变量</p>
+    <p class="in-parameter" title="">
+        <i class="icon-tips-out"></i>
+        <em>：</em>"
+        <b class="font-out-paramter"></b>","
+        <b class="font-out-paramter-type">any</b>"
+    </p>
+</div>
+
+<script>
+    $(function () {
+        //携带的参数
+        $(".params").each(function (key, paramsElem) {
+            const $params = $(paramsElem)
+            const idAttr = $params.attr("id")
+            let $liAdd = $params.find(".liAdd").eq(0)
+            const $keyInput = $liAdd.find("[name='key-1']")
+            if ($keyInput){
+                $keyInput.attr("name", `${idAttr}-key-1`)
+            }
+            const valueInput = $liAdd.find("[name='value-1']")
+            if (valueInput){
+                valueInput.attr("name", `${idAttr}-value-1`)
+            }
+            const $liAddTemplate = $liAdd.clone(true)
+            $params.on('click', '.add', function () {
+                let indexCount = $params.find('[name="indexCount"]')
+                let index = parseInt(indexCount.val()) + 1
+                const $liAddTemplateCopy = $liAddTemplate.clone(true)
+                let $findKey = $liAddTemplateCopy.find(`[name='${idAttr}-key-1']`)
+                if ($findKey){
+                    $findKey.attr("name", `${idAttr}-key-${index}`)
+                }
+                let $findValue = $liAddTemplateCopy.find(`[name='${idAttr}-value-1']`)
+                if ($findValue){
+                    $findValue.attr("name", `${idAttr}-value-${index}`)
+                }
+                $liAddTemplateCopy.appendTo($params)
+                modal.refreshModal()
+                $params.find(".liAdd").eq(0).find(".sub").hide();
+                addNewLI();
+                indexCount.val(index)
+            })
+            $params.on('click', '.sub', function () {
+                $(this).parent().remove()
+                $params.find(".liAdd").eq(0).find(".sub").hide()
+                modal.refreshModal()
+                addNewLI()
+            })
+            $params.find(".liAdd").eq(0).find(".sub").hide()
+        })
+    })
+
+    function addNewLI() {
+        if (modal.$data.editLiuchengItem.isEditExistedItem) {
+            newLI($('#' + modal.$data.editLiuchengItem.editItemId))
+        } else {
+            newLI()
+        }
+    }
+</script>

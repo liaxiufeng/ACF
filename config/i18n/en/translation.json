@@ -162,6 +162,11 @@
     "menuTitle":"Extract variables.",
     "menuNote":"Extract some variables through their subscript values or key names, output a new variable and name it"
     },
+    "javascript引擎": {
+        "outParam": "Output variable naming",
+        "menuTitle": "set new variable by javascript function",
+        "menuNote": "using old variable, set new variable by javascript function"
+    },
     "convertParam": {
     "outParam":"Output variable naming",
     "regexValue":"Regular expressions",

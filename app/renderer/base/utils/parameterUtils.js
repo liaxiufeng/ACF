@@ -560,6 +560,9 @@ let parameterUtils = {
             case "extractParam": //提取变量
                 node.dataType = "array";
                 break;
+            case "javascriptEngine": //javascript引擎
+                node.dataType = "any";
+                break;
             case "saveAccount": //设置账号
                 node.dataType = "string";
                 break;

@@ -570,6 +570,12 @@
                 "nodeType": "extractParam"
             },
             {
+                "name": "javascript引擎",
+                "url": "canshuchuli/javascriptyingqing.html",
+                "className": "diy-icon-menu3-4",
+                "nodeType": "javascriptEngine"
+            },
+            {
                 "name": "变量转换",
                 "url": "canshuchuli/canshuzhuanhuan.html",
                 "className": "diy-icon-menu3-5",

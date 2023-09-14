@@ -495,6 +495,20 @@ incident.addEVent("extractParam", function (step, callback, ctx) { //提取变�
         callback();
     });
 })
+incident.addEVent("javascriptEngine", function (step, callback, ctx) { //javascript引擎
+    const { parameters } = step
+    const { javascriptMethod } = parameters
+    const args = []
+    for (const key in parameters) {
+        if (/^args-value-\d+$/.test(key)) {
+            args.push(parameters[key])
+        }
+    }
+    const data = eval(`(${javascriptMethod})(${args.join(",")})`)
+    console.log('js引擎：',`(${javascriptMethod})(${args.join(",")})`)
+    console.log('js引擎执行结果：',data)
+    ctx.set(step.parameters.rename, data);
+})
 incident.addEVent("callFunction", function (step, callback, ctx) { //变量转换
     paramSwitchUtil.doParamSwitch(step.parameters, function (err, data) {
         if (err) {
